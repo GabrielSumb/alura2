@@ -4,9 +4,11 @@ document.querySelector('.menu-hamburguer').addEventListener('click', function() 
 
 document.querySelector('.menu-sucos > a').addEventListener('click', function(event) {
     event.preventDefault();
-    document.querySelector('.menu-sucos').classList.toggle('show-sucos');
+    const sucosMenu = document.querySelector('.menu-sucos');
+    sucosMenu.classList.toggle('show-sucos');
+    if (sucosMenu.classList.contains('show-sucos')) {
+        sucosMenu.querySelector('ul').style.display = 'block';
+    } else {
+        sucosMenu.querySelector('ul').style.display = 'none';
+    }
 });
-
-
-
-
