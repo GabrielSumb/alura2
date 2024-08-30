@@ -120,6 +120,10 @@ nav {
     flex-direction: column;
 }
 
+.show-sucos ul {
+    display: block !important;
+}
+
 main {
     padding: 20px;
     margin-bottom: 60px; /* Adiciona espaço para o rodapé */
@@ -169,5 +173,3 @@ footer {
     width: 100%;
     bottom: 0;
 }
-
-
