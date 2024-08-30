@@ -114,3 +114,14 @@ nav {
     display: flex !important;
     flex-direction: column;
 }
+
+footer {
+    background-color: #4caf50;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
