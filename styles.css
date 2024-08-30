@@ -134,14 +134,19 @@ h2 {
 }
 
 article {
+    display: flex;
+    align-items: center;
     margin-bottom: 20px;
 }
 
 article img {
-    max-width: 100%;
+    max-width: 150px;
     height: auto;
-    display: block;
-    margin: 10px 0;
+    margin-right: 20px;
+}
+
+.texto-suco {
+    max-width: 600px;
 }
 
 table {
@@ -159,18 +164,5 @@ th, td {
     text-align: left;
 }
 
-th {
-    background-color: #4caf50;
-    color: white;
-}
 
-footer {
-    background-color: #4caf50;
-    color: white;
-    text-align: center;
-    padding: 5px 0;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-}
 
