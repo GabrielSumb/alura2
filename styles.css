@@ -122,6 +122,7 @@ nav {
 
 main {
     padding: 20px;
+    margin-bottom: 60px; /* Adiciona espaço para o rodapé */
 }
 
 h2 {
@@ -161,3 +162,4 @@ footer {
     width: 100%;
     bottom: 0;
 }
+
