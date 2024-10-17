@@ -1,62 +1,58 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<link rel="stylesheet" type="text/css" href= "styles.css"media="screen" />
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Memórias Escolares de Gabriel</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memórias Escolares</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <h1>Memórias Escolares de Gabriel</h1>
-    <div class="theme-switch-wrapper">
-      <label class="theme-switch" for="checkbox">
-        <input type="checkbox" id="checkbox" />
-        <div class="slider round"></div>
-      </label>
-      <em>Mudar tema</em>
-    </div>
-    <nav>
-      <ul>
-        <li><a href="#galeria">Galeria</a></li>
-        <li><a href="#linha-do-tempo">Linha do Tempo</a></li>
-        <li><a href="#testemunhos">Testemunhos</a></li>
-        <li><a href="#videos">Vídeos</a></li>
-        <li><a href="#mapa">Mapa</a></li>
-      </ul>
-    </nav>
-  </header>
-  <main>
-    <section id="galeria" class="projeto">
-      <h2>Galeria de Fotos</h2>
-      <p>Fotos dos momentos mais marcantes do ano escolar.</p>
-      <img src="img/galeria-1.png" alt="Galeria de Fotos">
+    <header>
+        <h1>Memórias Escolares</h1>
+        <p>Vamos relembrar meus tempos de escola, eu não era gente.</p>
+    </header>
+
+    <section id="sobre">
+        <h2>Sobre Mim</h2>
+        <p>Bem esse e meu site para o buiuzinho e já aviso que não so um aluno 10 mais também não so abaixo de 7</p>
     </section>
-    <section id="linha-do-tempo" class="projeto">
-      <h2>Linha do Tempo</h2>
-      <p>Principais eventos e conquistas do ano escolar.</p>
-      <img src="img/linha-do-tempo.png" alt="Linha do Tempo">
+
+    <section id="memorias">
+        <h2>Minhas Memórias Escolares</h2>
+        <div class="carousel">
+            <button class="prev">&#10094;</button>
+            <div class="slides">
+                <img src="https://www.africanizeoficial.com.br/storage/fundacao-espaco-itau-africanize-400x400.jpg" alt="Primeiro dia de aula" class="slide">
+                <img src="memoria2.jpg" alt="Gincana escolar" class="slide">
+                <img src="memoria3.jpg" alt="Formatura" class="slide">
+            </div>
+            <button class="next">&#10095;</button>
+        </div>
     </section>
-    <section id="testemunhos" class="projeto">
-      <h2>Testemunhos</h2>
-      <p>Depoimentos de colegas e professores.</p>
-      <img src="img/testemunhos.png" alt="Testemunhos">
+
+    <section id="contato">
+        <h2>Contato</h2>
+        <p>Entre em contato para compartilhar suas memórias escolares!</p>
+        <form>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="mensagem" required></textarea>
+            
+            <button type="submit">Enviar</button>
+        </form>
     </section>
-    <section id="videos" class="projeto">
-      <h2>Vídeos</h2>
-      <p>Vídeos das atividades e eventos escolares.</p>
-      <img src="img/videos.png" alt="Vídeos">
-    </section>
-    <section id="mapa" class="projeto">
-      <h2>Mapa Interativo</h2>
-      <p>Locais significativos relacionados às memórias escolares.</p>
-      <img src="img/mapa.png" alt="Mapa Interativo">
-    </section>
-  </main>
-  <footer>
-    <p>&copy; 2024 Memórias Escolares de Gabriel. Todos os direitos reservados.</p>
-  </footer>
-  <script src="script.js"></script>
+
+    <footer>
+        <p>&copy; 2024 Memórias Escolares. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
-</html>
+</html>>
 
