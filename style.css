@@ -1,21 +1,76 @@
-.lead {
-  color: var(black);
-  font-weight: 700;
-}
 body {
-  font-family: "Chakra Petch", sans-serif;
-  color: var(--cor-principal);
-}
-.lead,
-.btn-link {
-  color: var(--cor-destaque);
-  font-weight: 700;
-}
-a,
-.btn-link:hover {
-  color: var(--cor-principal);
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+  color: #333;
 }
 
-a:hover {
-  color: var(--cor-destaque);
+header {
+  background-color: #4CAF50;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 10px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+main {
+  padding: 2rem;
+}
+
+.projeto {
+  background-color: white;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.projeto img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.modal-footer {
+  text-align: center;
+}
+
+.modal-footer a {
+  color: #4CAF50;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.modal-footer a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
