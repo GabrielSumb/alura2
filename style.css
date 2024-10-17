@@ -1,7 +1,13 @@
 body {
-  font-family: 'Comic Sans MS', 'Comic Sans', cursive; /* Uma fonte mais descontraída */
+  font-family: 'Comic Sans MS', 'Comic Sans', cursive;
   margin: 0;
   padding: 0;
+  background-color: #ffffff;
+  color: #333333;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
   background-color: #121212;
   color: #e0e0e0;
 }
@@ -40,11 +46,11 @@ main {
 }
 
 .projeto {
-  background-color: #1e1e1e;
+  background-color: #f9f9f9;
   padding: 1rem;
   margin: 1rem 0;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .projeto img {
@@ -54,28 +60,11 @@ main {
   margin-bottom: 1rem;
 }
 
-.modal-footer {
-  text-align: center;
-}
-
-.modal-footer a {
-  color: #4CAF50;
-  text-decoration: none;
-  margin: 0 10px;
-}
-
-.modal-footer a:hover {
-  text-decoration: underline;
-}
-
 footer {
   background-color: #333;
   color: white;
   text-align: center;
   padding: 1rem;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
 }
 
 .theme-switch-wrapper {
@@ -91,7 +80,7 @@ footer {
 }
 
 .theme-switch input {
-  display:none;
+  display: none;
 }
 
 .slider {
@@ -130,4 +119,16 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+.theme-switch-wrapper em {
+  margin-left: 10px;
+}
+
+.theme-switch-wrapper::before {
+  content: "☀️";
+}
+
+body.dark-mode .theme-switch-wrapper::before {
+  content: "🌙";
 }
