@@ -1,35 +1,95 @@
+/* Reset básico */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
+/* Corpo */
 body {
+    background-color: #121212;
+    color: #e0e0e0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.light-theme {
     background-color: #f4f4f4;
     color: #333;
 }
 
+/* Header */
 header {
-    background-color: #3b5998;
+    background-color: #1e1e1e;
     color: white;
-    padding: 2rem;
+    padding: 1.5rem;
     text-align: center;
+    position: relative;
 }
 
-section {
-    padding: 2rem;
-    text-align: center;
+.light-theme header {
+    background-color: #f8f9fa;
+    color: #333;
 }
 
 h1, h2 {
     margin-bottom: 1rem;
 }
 
-p {
-    margin-bottom: 1.5rem;
+h2 {
+    font-size: 2rem;
 }
 
+p {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+/* Hamburger Menu */
+.hamburger-menu {
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    cursor: pointer;
+    font-size: 2rem;
+    z-index: 1000;
+}
+
+.nav-links ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.nav-links ul li {
+    display: inline-block;
+    margin-right: 1rem;
+}
+
+.nav-links ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.light-theme .nav-links ul li a {
+    color: #333;
+}
+
+.nav-links ul .dropdown {
+    display: none;
+    position: absolute;
+    background-color: #333;
+}
+
+.nav-links ul li:hover .dropdown {
+    display: block;
+}
+
+.light-theme .dropdown {
+    background-color: #e0e0e0;
+}
+
+/* Carrossel */
 .carousel {
     position: relative;
     width: 80%;
@@ -66,6 +126,7 @@ button {
     right: 0;
 }
 
+/* Formulário */
 form {
     max-width: 400px;
     margin: 0 auto;
@@ -92,6 +153,28 @@ button[type="submit"]:hover {
     background-color: #2a4271;
 }
 
+/* Botão Voltar ao Topo */
+#back-to-top {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #3b5998;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 14px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+#back-to-top:hover {
+    background-color: #2a4271;
+}
+
+/* Footer */
 footer {
     background-color: #333;
     color: white;
@@ -99,3 +182,8 @@ footer {
     text-align: center;
     margin-top: 2rem;
 }
+
+.light-theme footer {
+    background-color: #f4f4f4;
+    color: #333;
+    }
