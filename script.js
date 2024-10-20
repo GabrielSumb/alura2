@@ -1,12 +1,12 @@
 let currentSlide = 0;
 const slides = document.querySelectorAll('.slide');
 const themeToggle = document.getElementById('theme-toggle');
-const backToTopButton = document.getElementById('back-to-top');
-const hamburgerMenu = document.getElementById('hamburger-menu');
-const navLinks = document.getElementById('nav-links');
-const themeIcon = document.getElementById('theme-icon');
+const body = document.body;
+const backToTopBtn = document.getElementById('back-to-top');
+const menuButton = document.querySelector('.hamburger');
+const navMenu = document.querySelector('nav');
+const menu = document.querySelector('.menu');
 
-// Carousel functionality
 document.querySelector('.next').addEventListener('click', () => {
     changeSlide(1);
 });
@@ -22,31 +22,34 @@ function changeSlide(direction) {
     });
 }
 
-// Theme toggle functionality
 themeToggle.addEventListener('click', () => {
-    document.body.classList.toggle('light-theme');
-    if (document.body.classList.contains('light-theme')) {
-        themeIcon.textContent = '🌙'; // Icon for dark mode
+    if (body.classList.contains('light-theme')) {
+        body.classList.remove('light-theme');
+        body.classList.add('dark-theme');
+        themeToggle.innerHTML = '&#9728;'; // Ícone de sol
     } else {
-        themeIcon.textContent = '☀️'; // Icon for light mode
+        body.classList.remove('dark-theme');
+        body.classList.add('light-theme');
+        themeToggle.innerHTML = '&#127769;'; // Ícone de lua
     }
 });
 
-// Hamburger menu functionality
-hamburgerMenu.addEventListener('click', () => {
-    navLinks.classList.toggle('open');
+menuButton.addEventListener('click', () => {
+    menu.classList.toggle('open');
+    menuButton.classList.toggle('active');
 });
 
-// Back to top button functionality
 window.addEventListener('scroll', () => {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        backToTopButton.style.display = 'block';
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        backToTopBtn.style.display = "block";
     } else {
-        backToTopButton.style.display = 'none';
+        backToTopBtn.style.display = "none";
     }
 });
 
-backToTopButton.addEventListener('click', () => {
-    document.body.scrollTop = 0; // For Safari
-    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 });
+
+// Estilo do botão de tema para transição suave
+body.classList.add('theme-transition');
