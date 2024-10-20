@@ -1,30 +1,11 @@
-// Variáveis para elementos do DOM
-const menuButton = document.querySelector('.menu-button');
-const menu = document.querySelector('.menu');
-const themeToggle = document.querySelector('.theme-toggle');
+let currentSlide = 0;
 const slides = document.querySelectorAll('.slide');
+const themeToggleButton = document.querySelector('.theme-toggle');
+const menuButton = document.querySelector('.menu-button');
+const menu = document.querySelector('nav.menu');
 const backToTopButton = document.getElementById('back-to-top');
 
-let currentSlide = 0;
-
-// Função para alternar o menu hamburger
-menuButton.addEventListener('click', () => {
-    menu.classList.toggle('open');
-    menuButton.classList.toggle('active'); // Animação do hamburger
-});
-
-// Função para alternar o tema
-themeToggle.addEventListener('click', () => {
-    document.body.classList.toggle('light-theme');
-    // Mudar ícone de tema
-    if (document.body.classList.contains('light-theme')) {
-        themeToggle.innerHTML = '🌙'; // Lua para tema escuro
-    } else {
-        themeToggle.innerHTML = '☀️'; // Sol para tema claro
-    }
-});
-
-// Navegação do carrossel
+// Função para mudar o slide
 document.querySelector('.next').addEventListener('click', () => {
     changeSlide(1);
 });
@@ -40,17 +21,48 @@ function changeSlide(direction) {
     });
 }
 
-// Mostrar/ocultar botão "Voltar ao Topo"
+// Função para mudar tema
+themeToggleButton.addEventListener('click', () => {
+    document.body.classList.toggle('light-theme');
+    document.querySelector('header').classList.toggle('light-theme');
+    menu.classList.toggle('light-theme');
+    themeToggleButton.classList.toggle('light-theme');
+
+    if (document.body.classList.contains('light-theme')) {
+        themeToggleButton.innerHTML = '🌙'; // Lua
+    } else {
+        themeToggleButton.innerHTML = '☀️'; // Sol
+    }
+});
+
+// Função para abrir/fechar o menu hambúrguer
+menuButton.addEventListener('click', () => {
+    menu.classList.toggle('open');
+    menuButton.classList.toggle('active');
+
+    if (menuButton.classList.contains('active')) {
+        menuButton.innerHTML = '✖'; // Mudar para X
+    } else {
+        menuButton.innerHTML = '☰'; // Voltar para 3 riscos
+    }
+});
+
+// Função para voltar ao topo
+backToTopButton.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth' // Animação suave
+    });
+});
+
+// Mostrar botão "voltar ao topo"
 window.addEventListener('scroll', () => {
-    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+    if (window.scrollY > 200) {
         backToTopButton.style.display = 'block';
     } else {
         backToTopButton.style.display = 'none';
     }
 });
 
-// Voltar ao topo ao clicar no botão
-backToTopButton.addEventListener('click', () => {
-    document.body.scrollTop = 0; // Para Safari
-    document.documentElement.scrollTop = 0; // Para outros navegadores
-});
+// Inicialização do carrossel
+changeSlide(0);
