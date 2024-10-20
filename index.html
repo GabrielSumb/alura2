@@ -6,35 +6,35 @@
     <title>Memórias Escolares</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body class="dark-theme">
+<body>
     <header>
         <h1>Memórias Escolares</h1>
-        <button id="theme-toggle" class="theme-toggle">&#9728;</button>
-        <div class="hamburger" id="menu-button">
+        <p>Vamos relembrar meus tempos de escola, eu não era gente.</p>
+        <button class="theme-toggle">🌙</button>
+        <button class="menu-button">
             <div class="bar"></div>
             <div class="bar"></div>
             <div class="bar"></div>
-        </div>
+        </button>
+        <nav class="menu">
+            <ul>
+                <li><a href="#">Meus Trabalhos que Mais Gostei</a></li>
+                <li>
+                    <a href="#">Amigos</a>
+                    <ul>
+                        <li><a href="#">Fotos Engraçadas</a></li>
+                        <li><a href="#">Relatos</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Melhores Momentos</a></li>
+                <li><a href="#">Como Foi o Ano</a></li>
+            </ul>
+        </nav>
     </header>
-
-    <nav>
-        <ul class="menu">
-            <li><a href="#trabalhos">Meus Trabalhos que Mais Gostei</a></li>
-            <li>
-                <a href="#amigos">Amigos</a>
-                <ul class="submenu">
-                    <li><a href="#fotos-engracadas">Fotos Engraçadas</a></li>
-                    <li><a href="#relatos">Relatos</a></li>
-                </ul>
-            </li>
-            <li><a href="#melhores-momentos">Melhores Momentos</a></li>
-            <li><a href="#como-foi-o-ano">Como Foi o Ano</a></li>
-        </ul>
-    </nav>
 
     <section id="sobre">
         <h2>Sobre Mim</h2>
-        <p>Bem, esse é meu site para o buiuzinho e já aviso que não sou um aluno 10, mas também não sou abaixo de 7.</p>
+        <p>Bem esse é meu site para o buiuzinho e já aviso que não sou um aluno 10, mas também não sou abaixo de 7.</p>
     </section>
 
     <section id="memorias">
@@ -45,26 +45,27 @@
                 <img src="https://www.africanizeoficial.com.br/storage/fundacao-espaco-itau-africanize-400x400.jpg" alt="Primeiro dia de aula" class="slide">
                 <img src="memoria2.jpg" alt="Gincana escolar" class="slide">
                 <img src="memoria3.jpg" alt="Formatura" class="slide">
+                <!-- Adicione mais imagens conforme necessário -->
             </div>
             <button class="next">&#10095;</button>
         </div>
     </section>
 
     <section id="amigos">
-        <h2>Amigos</h2>
-        <p>Minhas melhores memórias com os amigos.</p>
+        <h2>Meus Amigos</h2>
+        <p>Aqui estão algumas das minhas melhores memórias com amigos!</p>
     </section>
 
     <section id="como-foi-o-ano">
         <h2>Como Foi o Ano</h2>
-        <p>Um resumo do meu ano escolar.</p>
+        <p>Um resumo das melhores experiências do ano!</p>
     </section>
-
-    <button id="back-to-top">↑ Voltar ao Topo</button>
 
     <footer>
         <p>&copy; 2024 Memórias Escolares. Todos os direitos reservados.</p>
     </footer>
+
+    <button id="back-to-top">↑ Voltar ao Topo</button>
 
     <script src="script.js"></script>
 </body>
