@@ -6,93 +6,75 @@
 }
 
 body {
-    background-color: #1e1e1e; /* Fundo escuro */
-    color: #f4f4f4; /* Texto claro */
-    transition: background-color 0.5s ease, color 0.5s ease;
+    background-color: #121212; /* Cor de fundo escura */
+    color: #e0e0e0; /* Texto claro para contraste */
 }
 
 header {
-    background-color: #5e3f8c; /* Roxo */
+    background-color: #3a0a4b; /* Roxo escuro */
     color: white;
     padding: 2rem;
     text-align: center;
-    position: relative;
 }
 
-header h1 {
-    margin-bottom: 1rem;
-}
-
-button.theme-toggle {
-    position: absolute;
-    top: 1rem;
-    right: 3rem;
-    background: none;
-    border: none;
-    font-size: 1.5rem;
+.theme-toggle {
     cursor: pointer;
-}
-
-button.menu-button {
+    font-size: 24px;
     position: absolute;
-    top: 1rem;
-    right: 1rem;
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
+    top: 20px;
+    right: 60px;
 }
 
-nav.menu {
-    display: none; /* Oculta o menu inicialmente */
+.menu-button {
+    cursor: pointer;
+    font-size: 24px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.menu {
+    display: none;
+    background-color: #3a0a4b;
     position: absolute;
     top: 60px;
-    right: 0;
-    background-color: #5e3f8c;
-    width: 200px;
-    border-radius: 5px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-    z-index: 10;
-}
-
-nav.menu ul {
-    list-style: none;
+    right: 20px;
     padding: 1rem;
+    border-radius: 8px;
 }
 
-nav.menu li {
-    margin-bottom: 1rem;
-}
-
-nav.menu li a {
-    color: #f4f4f4;
-    text-decoration: none;
-    font-size: 1.2rem;
+.menu.open {
     display: block;
-    padding: 0.5rem;
-    transition: background-color 0.3s;
 }
 
-nav.menu li a:hover {
-    background-color: #4a317b; /* Cor ao passar o mouse */
+.menu ul {
+    list-style: none;
 }
 
-nav.menu ul ul {
-    margin-top: 0.5rem;
-    padding-left: 1rem; /* Indentação para subtemas */
+.menu ul li {
+    margin-bottom: 0.5rem;
 }
 
-section {
+#temas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
     padding: 2rem;
-    text-align: center;
 }
 
-h2 {
-    margin-bottom: 1rem;
+.tema-box {
+    background-color: #2a0a35; /* Cor do quadrado */
+    border: 1px solid #ffffff;
+    border-radius: 10px;
+    width: calc(45% - 20px); /* Ajustar largura dos quadrados */
+    padding: 1.5rem;
+    margin: 10px;
+    transition: transform 0.3s, background-color 0.3s;
 }
 
-p {
-    margin-bottom: 1.5rem;
+.tema-box:hover {
+    transform: scale(1.05); /* Animação de aumento */
+    background-color: #3a0a4b; /* Cor ao passar o mouse */
 }
 
 .carousel {
@@ -109,8 +91,8 @@ p {
 
 .slide {
     width: 100%;
+    height: auto; /* Ajusta altura */
     transition: transform 0.5s ease;
-    border-radius: 10px; /* Arredondar bordas das imagens */
 }
 
 button {
@@ -122,78 +104,80 @@ button {
     border: none;
     padding: 1rem;
     cursor: pointer;
-    border-radius: 5px; /* Bordas arredondadas para os botões */
 }
 
 .prev {
-    left: 10px;
+    left: 0;
 }
 
 .next {
-    right: 10px;
+    right: 0;
 }
 
-#back-to-top {
+button#back-to-top {
+    display: none;
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #5e3f8c;
+    background-color: #3a0a4b;
     color: white;
     border: none;
     padding: 10px;
-    cursor: pointer;
     border-radius: 5px;
-    display: none; /* Inicialmente oculto */
+    cursor: pointer;
 }
 
-#back-to-top:hover {
-    background-color: #4a317b; /* Cor ao passar o mouse */
+button#back-to-top:hover {
+    background-color: #2a0a35;
 }
 
 footer {
-    background-color: #333;
+    background-color: #3a0a4b; /* Roxo escuro */
     color: white;
     padding: 1rem;
     text-align: center;
     margin-top: 2rem;
 }
 
-/* Estilos para tema claro */
+/* Estilos para o tema claro */
 body.light-theme {
-    background-color: #f4f4f4; /* Fundo claro */
-    color: #333; /* Texto escuro */
+    background-color: #ffffff; /* Fundo claro */
+    color: #333333; /* Texto escuro */
 }
 
-header.light-theme {
-    background-color: #ffcc00; /* Amarelo */
+header.light-theme, 
+.menu.light-theme {
+    background-color: #f2c94c; /* Amarelo claro */
+    color: #333333; /* Texto escuro */
 }
 
-nav.menu.light-theme {
-    background-color: #ffcc00; /* Menu amarelo */
+.tema-box.light-theme {
+    background-color: #f7f7f7; /* Fundo claro dos quadrados */
+    border: 1px solid #cccccc; /* Borda clara */
 }
 
-nav.menu.light-theme li a {
-    color: #333; /* Texto escuro */
+.menu-button.active {
+    transform: rotate(45deg); /* Rotação para "X" */
 }
 
-button.theme-toggle.light-theme {
-    color: #333; /* Cor do ícone de tema claro */
+/* Animações para menu */
+.menu-button.active::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: #f2c94c; /* Cor do risco */
+    transform: rotate(90deg); /* Rotação para criar o "X" */
 }
 
-button.menu-button.light-theme {
-    color: #333; /* Cor do botão do menu */
-}
-
-/* Animações */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-section {
-    animation: fadeIn 0.5s ease-in-out;
+.menu-button.active::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: #f2c94c; /* Cor do risco */
 }
