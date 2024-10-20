@@ -3,9 +3,8 @@ const slides = document.querySelectorAll('.slide');
 const themeToggle = document.getElementById('theme-toggle');
 const body = document.body;
 const backToTopBtn = document.getElementById('back-to-top');
-const menuButton = document.querySelector('.hamburger');
-const navMenu = document.querySelector('nav');
-const menu = document.querySelector('.menu');
+const menuButton = document.getElementById('menu-button');
+const menu = document.querySelector('nav');
 
 document.querySelector('.next').addEventListener('click', () => {
     changeSlide(1);
@@ -35,21 +34,18 @@ themeToggle.addEventListener('click', () => {
 });
 
 menuButton.addEventListener('click', () => {
-    menu.classList.toggle('open');
-    menuButton.classList.toggle('active');
+    menu.classList.toggle('open'); // Alterna a classe 'open' no menu
+    menuButton.classList.toggle('active'); // Animação do botão hamburguer
 });
 
 window.addEventListener('scroll', () => {
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        backToTopBtn.style.display = "block";
+    if (window.scrollY > 200) {
+        backToTopBtn.style.display = 'block'; // Mostra o botão "voltar ao topo" ao descer
     } else {
-        backToTopBtn.style.display = "none";
+        backToTopBtn.style.display = 'none'; // Oculta o botão "voltar ao topo" ao voltar para o topo
     }
 });
 
 backToTopBtn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({top: 0, behavior: 'smooth'}); // Rolagem suave para o topo
 });
-
-// Estilo do botão de tema para transição suave
-body.classList.add('theme-transition');
