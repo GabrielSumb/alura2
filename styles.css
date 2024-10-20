@@ -8,54 +8,55 @@
 
 /* Tema escuro */
 body.dark-theme {
-    background-color: #121212; /* Cor de fundo escuro */
-    color: #e0e0e0; /* Cor do texto claro */
+    background-color: #000000; /* Preto */
+    color: #e0e0e0; /* Cinza claro */
 }
 
 header.dark-theme {
-    background-color: #4b0082; /* Cor de fundo do cabeçalho */
-    color: #e0e0e0; /* Cor do texto do cabeçalho */
+    background-color: #3b0f4d; /* Roxo escuro */
+    color: #ffffff; /* Branco */
 }
 
 button.dark-theme, #back-to-top.dark-theme {
-    background-color: #4b0082; /* Cor do botão escuro */
-    color: white; /* Cor do texto do botão escuro */
+    background-color: #3b0f4d; /* Roxo escuro */
+    color: #ffffff; /* Branco */
 }
 
 .nav-links ul.dark-theme {
-    background-color: #4b0082; /* Cor do menu hambúrguer escuro */
+    background-color: #3b0f4d; /* Roxo escuro */
 }
 
 footer.dark-theme {
-    background-color: #1c1c1c; /* Cor de fundo do rodapé */
-    color: #e0e0e0; /* Cor do texto do rodapé */
+    background-color: #1c1c1c; /* Cinza escuro */
+    color: #e0e0e0; /* Cinza claro */
 }
 
 /* Tema claro */
 body.light-theme {
-    background-color: #ffffff; /* Cor de fundo claro */
-    color: #333333; /* Cor do texto escuro */
+    background-color: #ffffff; /* Branco */
+    color: #333333; /* Preto */
 }
 
 header.light-theme {
-    background-color: #ffd700; /* Cor de fundo do cabeçalho claro */
-    color: #333333; /* Cor do texto do cabeçalho claro */
+    background-color: #ffd700; /* Amarelo */
+    color: #333333; /* Preto */
 }
 
 button.light-theme, #back-to-top.light-theme {
-    background-color: #ffd700; /* Cor do botão claro */
-    color: #333333; /* Cor do texto do botão claro */
+    background-color: #ffd700; /* Amarelo */
+    color: #333333; /* Preto */
 }
 
 .nav-links ul.light-theme {
-    background-color: #ffd700; /* Cor do menu hambúrguer claro */
+    background-color: #ffd700; /* Amarelo */
 }
 
 footer.light-theme {
-    background-color: #f0f0f0; /* Cor de fundo do rodapé claro */
-    color: #333333; /* Cor do texto do rodapé claro */
+    background-color: #f0f0f0; /* Cinza claro */
+    color: #333333; /* Preto */
 }
 
+/* Estilos do header */
 header {
     padding: 2rem;
     text-align: center;
@@ -75,7 +76,7 @@ p {
     cursor: pointer;
     position: absolute;
     top: 20px;
-    right: 20px;
+    right: 70px; /* Distância do canto direito */
     font-size: 1.5rem;
 }
 
@@ -113,6 +114,12 @@ p {
     transform: translateY(-10px) rotate(-45deg);
 }
 
+.nav-links {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
 .nav-links ul {
     display: none;
     list-style-type: none;
@@ -121,7 +128,7 @@ p {
     top: 60px;
     left: 0;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.8); /* Menu escuro */
     transition: max-height 0.4s ease;
     z-index: 9;
     flex-direction: column;
@@ -164,18 +171,20 @@ p {
 
 .nav-links ul ul.submenu li {
     margin: 5px 0;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.6); /* Menu sub-menu escuro */
 }
 
 .nav-links ul ul.submenu li a {
     font-size: 1rem;
 }
 
+/* Estilo das seções */
 section {
     padding: 2rem;
     text-align: center;
 }
 
+/* Estilos do botão "Voltar ao Topo" */
 #back-to-top {
     display: none;
     position: fixed;
@@ -192,4 +201,42 @@ section {
 
 #back-to-top:hover {
     opacity: 0.8;
+}
+
+/* Estilos do carousel */
+.carousel {
+    position: relative;
+    width: 80%;
+    margin: 2rem auto;
+}
+
+.slides {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+}
+
+.slide {
+    width: 100%;
+    transition: transform 0.5s ease;
+}
+
+/* Botões do carousel */
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
     }
