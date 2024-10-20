@@ -1,11 +1,30 @@
-let currentSlide = 0;
-const slides = document.querySelectorAll('.slide');
-const themeToggleButton = document.querySelector('.theme-toggle');
+// Variáveis para elementos do DOM
 const menuButton = document.querySelector('.menu-button');
 const menu = document.querySelector('.menu');
+const themeToggle = document.querySelector('.theme-toggle');
+const slides = document.querySelectorAll('.slide');
 const backToTopButton = document.getElementById('back-to-top');
 
-// Função para mudar o slide
+let currentSlide = 0;
+
+// Função para alternar o menu hamburger
+menuButton.addEventListener('click', () => {
+    menu.classList.toggle('open');
+    menuButton.classList.toggle('active'); // Animação do hamburger
+});
+
+// Função para alternar o tema
+themeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('light-theme');
+    // Mudar ícone de tema
+    if (document.body.classList.contains('light-theme')) {
+        themeToggle.innerHTML = '🌙'; // Lua para tema escuro
+    } else {
+        themeToggle.innerHTML = '☀️'; // Sol para tema claro
+    }
+});
+
+// Navegação do carrossel
 document.querySelector('.next').addEventListener('click', () => {
     changeSlide(1);
 });
@@ -21,29 +40,17 @@ function changeSlide(direction) {
     });
 }
 
-// Função para alternar entre tema claro e escuro
-themeToggleButton.addEventListener('click', () => {
-    document.body.classList.toggle('light-theme');
-    const isLightTheme = document.body.classList.contains('light-theme');
-    themeToggleButton.innerHTML = isLightTheme ? '🌙' : '☀️'; // Alterar ícone
-});
-
-// Função para abrir/fechar menu hambúrguer
-menuButton.addEventListener('click', () => {
-    menu.classList.toggle('show');
-    menuButton.classList.toggle('open');
-});
-
-// Mostrar botão "Voltar ao Topo" ao rolar
+// Mostrar/ocultar botão "Voltar ao Topo"
 window.addEventListener('scroll', () => {
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
         backToTopButton.style.display = 'block';
     } else {
         backToTopButton.style.display = 'none';
     }
 });
 
-// Função para voltar ao topo
+// Voltar ao topo ao clicar no botão
 backToTopButton.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    document.body.scrollTop = 0; // Para Safari
+    document.documentElement.scrollTop = 0; // Para outros navegadores
 });
