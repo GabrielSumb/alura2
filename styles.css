@@ -6,26 +6,29 @@
 }
 
 body {
-    background-color: #f4f4f4;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    background-color: #1a1a1a;
+    color: #ccc;
+}
+
+/* Tema escuro */
+.dark-theme {
+    background-color: #1a1a1a;
+    color: #ccc;
+}
+
+/* Tema claro */
+.light-theme {
+    background-color: #fff;
     color: #333;
 }
 
-body.dark-theme {
-    background-color: #181818;
-    color: white;
-}
-
-body.light-theme {
-    background-color: white;
-    color: #333;
-}
-
+/* Estilos gerais */
 header {
-    background-color: #3b5998;
+    background-color: #4b0082;
     color: white;
-    padding: 2rem;
+    padding: 1.5rem;
     text-align: center;
-    position: relative;
 }
 
 h1, h2 {
@@ -36,51 +39,117 @@ p {
     margin-bottom: 1.5rem;
 }
 
-.theme-toggle {
-    cursor: pointer;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-}
-
-.hamburger-menu {
-    font-size: 2rem;
-    cursor: pointer;
-    position: absolute;
-    top: 20px;
-    left: 20px;
-}
-
-.nav-links ul {
-    display: none;
-    list-style-type: none;
-    background-color: #3b5998;
-    padding: 1rem;
-    position: absolute;
-    top: 70px;
-    left: 20px;
-    border-radius: 8px;
-}
-
-.nav-links ul.open {
-    display: block;
-}
-
-.nav-links ul ul.submenu {
-    display: none;
-    position: relative;
-    padding-left: 1rem;
-}
-
-.nav-links ul li:hover ul.submenu {
-    display: block;
-}
-
 section {
     padding: 2rem;
     text-align: center;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+/* Menu hambúrguer */
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.hamburger-menu div {
+    width: 100%;
+    height: 3px;
+    background-color: white;
+}
+
+.nav-links {
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    background-color: #4b0082;
+    text-align: left;
+}
+
+.nav-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.nav-links ul li {
+    padding: 15px;
+}
+
+.nav-links ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+.nav-links ul li:hover {
+    background-color: #5a18a5;
+}
+
+.submenu {
+    display: none;
+    background-color: #3b0078;
+    padding-left: 1.5rem;
+}
+
+.nav-links ul li:hover .submenu {
+    display: block;
+}
+
+/* Botão de tema */
+#theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #4b0082;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+#theme-toggle:hover {
+    background-color: #5a18a5;
+}
+
+#theme-icon {
+    font-size: 1.5rem;
+}
+
+/* Botão "voltar ao topo" */
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #4b0082;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    display: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#back-to-top:hover {
+    background-color: #5a18a5;
+}
+
+/* Carrossel */
 .carousel {
     position: relative;
     width: 80%;
@@ -117,36 +186,21 @@ button {
     right: 0;
 }
 
-.friend-memories {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin: 2rem 0;
-}
+/* Responsividade */
+@media (max-width: 768px) {
+    .hamburger-menu {
+        display: flex;
+    }
 
-.friend-photo {
-    width: 30%;
-    margin: 0.5rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        top: 50px;
+        left: 0;
+        width: 100%;
+    }
 
-#back-to-top {
-    display: none;
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #3b5998;
-    color: white;
-    border: none;
-    padding: 15px;
-    border-radius: 50px;
-    cursor: pointer;
-    font-size: 14px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease-in-out;
-}
-
-#back-to-top:hover {
-    background-color: #2a4271;
-}
+    .nav-links.active {
+        display: block;
+    }
+    }
