@@ -1,11 +1,11 @@
 let currentSlide = 0;
 const slides = document.querySelectorAll('.slide');
-const themeToggle = document.getElementById('theme-toggle');
-const body = document.body;
-const backToTopBtn = document.getElementById('back-to-top');
-const menuButton = document.getElementById('menu-button');
-const menu = document.querySelector('nav');
+const themeToggleButton = document.querySelector('.theme-toggle');
+const menuButton = document.querySelector('.menu-button');
+const menu = document.querySelector('.menu');
+const backToTopButton = document.getElementById('back-to-top');
 
+// Função para mudar o slide
 document.querySelector('.next').addEventListener('click', () => {
     changeSlide(1);
 });
@@ -21,31 +21,29 @@ function changeSlide(direction) {
     });
 }
 
-themeToggle.addEventListener('click', () => {
-    if (body.classList.contains('light-theme')) {
-        body.classList.remove('light-theme');
-        body.classList.add('dark-theme');
-        themeToggle.innerHTML = '&#9728;'; // Ícone de sol
-    } else {
-        body.classList.remove('dark-theme');
-        body.classList.add('light-theme');
-        themeToggle.innerHTML = '&#127769;'; // Ícone de lua
-    }
+// Função para alternar entre tema claro e escuro
+themeToggleButton.addEventListener('click', () => {
+    document.body.classList.toggle('light-theme');
+    const isLightTheme = document.body.classList.contains('light-theme');
+    themeToggleButton.innerHTML = isLightTheme ? '🌙' : '☀️'; // Alterar ícone
 });
 
+// Função para abrir/fechar menu hambúrguer
 menuButton.addEventListener('click', () => {
-    menu.classList.toggle('open'); // Alterna a classe 'open' no menu
-    menuButton.classList.toggle('active'); // Animação do botão hamburguer
+    menu.classList.toggle('show');
+    menuButton.classList.toggle('open');
 });
 
+// Mostrar botão "Voltar ao Topo" ao rolar
 window.addEventListener('scroll', () => {
-    if (window.scrollY > 200) {
-        backToTopBtn.style.display = 'block'; // Mostra o botão "voltar ao topo" ao descer
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        backToTopButton.style.display = 'block';
     } else {
-        backToTopBtn.style.display = 'none'; // Oculta o botão "voltar ao topo" ao voltar para o topo
+        backToTopButton.style.display = 'none';
     }
 });
 
-backToTopBtn.addEventListener('click', () => {
-    window.scrollTo({top: 0, behavior: 'smooth'}); // Rolagem suave para o topo
+// Função para voltar ao topo
+backToTopButton.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 });
