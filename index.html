@@ -3,82 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minhas Memórias do Ensino Médio</title>
+    <title>Memórias Escolares</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body class="dark-theme">
     <header>
-        <h1>Minhas Memórias do Ensino Médio</h1>
-        <p>Estudante do 2°Ano D - Colégio Estadual Padre Cláudio Morelli</p>
+        <h1>Memórias Escolares</h1>
+        <p>Vamos relembrar meus tempos de escola, eu não era gente.</p>
+        <div id="theme-toggle" class="theme-toggle">
+            <span id="theme-icon">🌙</span> <!-- Ícone para alternar tema -->
+        </div>
+        <div class="hamburger-menu">☰</div>
+        <nav class="nav-links">
+            <ul>
+                <li><a href="#trabalhos">Meus Trabalhos que Mais Gostei</a></li>
+                <li><a href="#amigos">Amigos</a>
+                    <ul class="submenu">
+                        <li><a href="#fotos-engracadas">Fotos Engraçadas</a></li>
+                        <li><a href="#relatos">Relatos</a></li>
+                    </ul>
+                </li>
+                <li><a href="#como-foi-o-ano">Como Foi o Ano</a></li>
+            </ul>
+        </nav>
     </header>
-
-    <nav class="hamburger-menu">
-        <div></div>
-        <div></div>
-        <div></div>
-    </nav>
-
-    <div class="nav-links">
-        <ul>
-            <li><a href="#sobre">Sobre Mim</a></li>
-            <li><a href="#trabalhos">Trabalhos que mais gostei</a></li>
-            <li>
-                <a href="#amigos">Amigos</a>
-                <ul class="submenu">
-                    <li><a href="#fotos">Fotos Engraçadas</a></li>
-                    <li><a href="#relatos">Relatos</a></li>
-                </ul>
-            </li>
-            <li><a href="#melhores-momentos">Melhores Momentos</a></li>
-            <li><a href="#ano">Como foi o Ano</a></li>
-        </ul>
-    </div>
 
     <section id="sobre">
         <h2>Sobre Mim</h2>
-        <p>Sou estudante do 2°Ano D do Colégio Estadual Padre Cláudio Morelli. Entrei no colégio no 9° ano, onde conheci meus grandes amigos Kauã e Luiz. Eu sou um aluno de inteligência média, que consegue aprender rápido, mas esqueço com a mesma velocidade. Minhas matérias favoritas são Física (especialmente a astronômica), Biologia e Filosofia, apesar de ser mais ligado às exatas.</p>
-        <p>Nos meus tempos livres, gosto de ouvir músicas, jogar videogame, cozinhar, assistir filmes e séries, e ir à academia. Esses hobbies me ajudam a relaxar e manter o equilíbrio entre os estudos e o lazer.</p>
+        <p>Bem esse é meu site para o buiuzinho e já aviso que não sou um aluno 10, mas também não sou abaixo de 7.</p>
+    </section>
+
+    <section id="memorias">
+        <h2>Minhas Memórias Escolares</h2>
+        <div class="carousel">
+            <button class="prev">&#10094;</button>
+            <div class="slides">
+                <img src="https://www.africanizeoficial.com.br/storage/fundacao-espaco-itau-africanize-400x400.jpg" alt="Primeiro dia de aula" class="slide">
+                <img src="memoria2.jpg" alt="Gincana escolar" class="slide">
+                <img src="memoria3.jpg" alt="Formatura" class="slide">
+                <img src="memoria4.jpg" alt="Passeio escolar" class="slide">
+                <img src="memoria5.jpg" alt="Reunião de amigos" class="slide">
+            </div>
+            <button class="next">&#10095;</button>
+        </div>
     </section>
 
     <section id="amigos">
         <h2>Amigos</h2>
-        <p>Conheci meus melhores amigos, Kauã e Luiz, no 9° ano. Desde então, compartilhamos muitas memórias, risadas e momentos inesquecíveis. Nossa amizade é uma das coisas mais valiosas que tenho.</p>
-        <div id="fotos">
-            <h3>Fotos Engraçadas</h3>
-            <p>Essas são algumas das nossas melhores lembranças juntos, momentos que jamais esquecerei.</p>
-            <img src="memoria2.jpg" alt="Foto engraçada 1" class="slide">
-            <img src="memoria3.jpg" alt="Foto engraçada 2" class="slide">
-        </div>
-        <div id="relatos">
-            <h3>Relatos</h3>
-            <p>Kauã e Luiz sempre estiveram ao meu lado nas melhores e piores situações. Desde o primeiro trabalho em grupo até as longas conversas sobre vida e futuro.</p>
+        <p>Essas são algumas das melhores lembranças que tenho com meus amigos!</p>
+        <div class="friend-memories">
+            <img src="amigo1.jpg" alt="Foto com amigos" class="friend-photo">
+            <img src="amigo2.jpg" alt="Diversão com amigos" class="friend-photo">
+            <img src="amigo3.jpg" alt="Reunião com amigos" class="friend-photo">
         </div>
     </section>
 
-    <section id="trabalhos">
-        <h2>Trabalhos que mais gostei</h2>
-        <p>Ao longo do Ensino Médio, fiz vários trabalhos interessantes, mas os que mais gostei foram os de Física (astronomia) e Filosofia, que me permitiram pensar fora da caixa e aprender de maneiras diferentes.</p>
-    </section>
-
-    <section id="melhores-momentos">
-        <h2>Melhores Momentos</h2>
-        <p>As gincanas escolares, a formatura do 9° ano e as competições de esportes foram alguns dos momentos mais marcantes até agora. Cada um deles trouxe novas experiências e amigos.</p>
-    </section>
-
-    <section id="ano">
-        <h2>Como foi o Ano</h2>
-        <p>O 2°Ano D foi um desafio. Foi um ano de muito aprendizado e também de adaptação, mas consegui me organizar entre estudos e atividades que gosto. É incrível como o tempo passa rápido quando você está envolvido em tantas coisas.</p>
+    <section id="como-foi-o-ano">
+        <h2>Como Foi o Ano</h2>
+        <p>Esse ano foi cheio de aprendizados e momentos inesquecíveis! Desde os desafios acadêmicos até as amizades que fiz ao longo do caminho.</p>
     </section>
 
     <footer>
-        <p>&copy; 2024 Minhas Memórias do Ensino Médio. Todos os direitos reservados.</p>
+        <p>&copy; 2024 Memórias Escolares. Todos os direitos reservados.</p>
     </footer>
 
-    <button id="back-to-top">⬆ Voltar ao Topo</button>
-    <div id="theme-toggle" class="theme-toggle">
-        <span id="theme-icon">🌙</span>
-    </div>
-
+    <button id="back-to-top">↑ Voltar ao Topo</button>
     <script src="script.js"></script>
 </body>
 </html>
