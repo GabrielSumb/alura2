@@ -1,4 +1,3 @@
-/* Estilos globais */
 * {
     margin: 0;
     padding: 0;
@@ -8,52 +7,52 @@
 
 /* Tema escuro */
 body.dark-theme {
-    background-color: #121212;
-    color: #e0e0e0;
+    background-color: #121212; /* Preto predominante */
+    color: #e0e0e0; /* Cinza claro para o texto */
 }
 
 header.dark-theme {
-    background-color: #4b0082;
-    color: #e0e0e0;
+    background-color: #4b0082; /* Roxo */
+    color: #e0e0e0; /* Cinza claro */
 }
 
 button.dark-theme, #back-to-top.dark-theme {
-    background-color: #4b0082;
+    background-color: #4b0082; /* Roxo */
     color: white;
 }
 
 .nav-links ul.dark-theme {
-    background-color: #4b0082;
+    background-color: #4b0082; /* Roxo no menu */
 }
 
 footer.dark-theme {
-    background-color: #1c1c1c;
-    color: #e0e0e0;
+    background-color: #1c1c1c; /* Cinza escuro */
+    color: #e0e0e0; /* Cinza claro */
 }
 
 /* Tema claro */
 body.light-theme {
-    background-color: #ffffff;
-    color: #333333;
+    background-color: #ffffff; /* Branco predominante */
+    color: #333333; /* Preto para o texto */
 }
 
 header.light-theme {
-    background-color: #ffd700;
-    color: #333333;
+    background-color: #ffd700; /* Amarelo predominante */
+    color: #333333; /* Preto */
 }
 
 button.light-theme, #back-to-top.light-theme {
-    background-color: #ffd700;
-    color: #333333;
+    background-color: #ffd700; /* Amarelo */
+    color: #333333; /* Preto */
 }
 
 .nav-links ul.light-theme {
-    background-color: #ffd700;
+    background-color: #ffd700; /* Amarelo no menu */
 }
 
 footer.light-theme {
-    background-color: #f0f0f0;
-    color: #333333;
+    background-color: #f0f0f0; /* Cinza claro */
+    color: #333333; /* Preto */
 }
 
 header {
@@ -75,41 +74,14 @@ p {
     position: absolute;
     top: 20px;
     right: 20px;
-    font-size: 1.5rem;
 }
 
-/* Estilo do menu hambúrguer */
 .hamburger-menu {
     font-size: 2rem;
     cursor: pointer;
     position: absolute;
     top: 20px;
     left: 20px;
-    display: block;
-    width: 30px;
-    height: 30px;
-    position: relative;
-    z-index: 10;
-}
-
-.hamburger-menu div {
-    background-color: #fff;
-    height: 4px;
-    width: 100%;
-    margin: 6px 0;
-    transition: all 0.4s ease;
-}
-
-.hamburger-menu.open div:nth-child(1) {
-    transform: translateY(10px) rotate(45deg);
-}
-
-.hamburger-menu.open div:nth-child(2) {
-    opacity: 0;
-}
-
-.hamburger-menu.open div:nth-child(3) {
-    transform: translateY(-10px) rotate(-45deg);
 }
 
 .nav-links ul {
@@ -117,62 +89,65 @@ p {
     list-style-type: none;
     padding: 1rem;
     position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    transition: max-height 0.4s ease;
-    z-index: 9;
-    flex-direction: column;
-    align-items: center;
-    border-radius: 0 0 10px 10px;
+    top: 70px;
+    left: 20px;
+    border-radius: 8px;
+    z-index: 1;
 }
 
 .nav-links ul.open {
-    display: flex;
-    max-height: 300px;
-}
-
-.nav-links ul li {
-    margin: 15px 0;
-}
-
-.nav-links ul li a {
-    text-decoration: none;
-    color: white;
-    font-size: 1.2rem;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.nav-links ul li a:hover {
-    background-color: rgba(255, 255, 255, 0.2);
+    display: block;
 }
 
 .nav-links ul ul.submenu {
     display: none;
-    padding-left: 0;
-    padding-top: 10px;
+    position: relative;
+    padding-left: 1rem;
 }
 
 .nav-links ul li:hover ul.submenu {
-    display: flex;
-    flex-direction: column;
-}
-
-.nav-links ul ul.submenu li {
-    margin: 5px 0;
-    background-color: rgba(0, 0, 0, 0.6);
-}
-
-.nav-links ul ul.submenu li a {
-    font-size: 1rem;
+    display: block;
 }
 
 section {
     padding: 2rem;
     text-align: center;
+}
+
+.carousel {
+    position: relative;
+    width: 80%;
+    margin: 2rem auto;
+}
+
+.slides {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+}
+
+.slide {
+    width: 100%;
+    transition: transform 0.5s ease;
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
 }
 
 #back-to-top {
@@ -191,4 +166,5 @@ section {
 
 #back-to-top:hover {
     opacity: 0.8;
-        }
+    }
+
