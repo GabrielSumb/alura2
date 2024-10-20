@@ -54,18 +54,25 @@ p {
 .nav-links ul {
     display: none;
     list-style-type: none;
+    background-color: #3b5998;
+    padding: 1rem;
+    position: absolute;
+    top: 70px;
+    left: 20px;
+    border-radius: 8px;
 }
 
 .nav-links ul.open {
     display: block;
 }
 
-.nav-links ul ul {
+.nav-links ul ul.submenu {
     display: none;
-    list-style-type: none;
+    position: relative;
+    padding-left: 1rem;
 }
 
-.nav-links ul li:hover ul {
+.nav-links ul li:hover ul.submenu {
     display: block;
 }
 
