@@ -4,6 +4,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const body = document.body;
     const themeIcon = document.getElementById('theme-icon');
 
+    // Definindo o tema padrão como escuro
+    body.classList.add('dark-theme');
+    themeIcon.textContent = '🌙'; // Ícone de lua para o modo escuro
+
     themeToggle.addEventListener('click', () => {
         if (body.classList.contains('light-theme')) {
             body.classList.remove('light-theme');
