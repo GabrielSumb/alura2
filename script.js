@@ -59,4 +59,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Mudar slide ao clicar nos botões
-    nextButton.addEventListener('
+    nextButton.addEventListener('click', () => {
+        changeSlide(1);
+    });
+
+    prevButton.addEventListener('click', () => {
+        changeSlide(-1);
+    });
+
+    // Inicializa o carrossel
+    changeSlide(0);
+});
