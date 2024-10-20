@@ -4,33 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Memórias Escolares</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="styles.css" media="screen" />
 </head>
 <body class="dark-theme">
     <header>
         <h1>Memórias Escolares</h1>
         <p>Vamos relembrar meus tempos de escola, eu não era gente.</p>
-        <div id="theme-toggle" class="theme-toggle">
-            <span id="theme-icon">🌙</span> <!-- Ícone para alternar tema -->
+        <div class="theme-toggle" id="theme-toggle">🌙</div>
+        <div class="hamburger-menu" id="hamburger-menu">
+            <div></div>
+            <div></div>
+            <div></div>
         </div>
-        <div class="hamburger-menu">☰</div>
-        <nav class="nav-links">
-            <ul>
-                <li><a href="#trabalhos">Meus Trabalhos que Mais Gostei</a></li>
-                <li><a href="#amigos">Amigos</a>
-                    <ul class="submenu">
-                        <li><a href="#fotos-engracadas">Fotos Engraçadas</a></li>
-                        <li><a href="#relatos">Relatos</a></li>
-                    </ul>
-                </li>
-                <li><a href="#como-foi-o-ano">Como Foi o Ano</a></li>
-            </ul>
-        </nav>
     </header>
+
+    <nav class="nav-links">
+        <ul id="nav-list">
+            <li><a href="#memorias">Minhas Memórias Escolares</a></li>
+            <li><a href="#amigos">Amigos</a>
+                <ul class="submenu">
+                    <li><a href="#fotos-engracadas">Fotos Engraçadas</a></li>
+                    <li><a href="#relatos">Relatos</a></li>
+                </ul>
+            </li>
+            <li><a href="#trabalhos">Meus Trabalhos que Mais Gostei</a></li>
+            <li><a href="#ano">Como Foi o Ano</a></li>
+        </ul>
+    </nav>
 
     <section id="sobre">
         <h2>Sobre Mim</h2>
-        <p>Bem esse é meu site para o buiuzinho e já aviso que não sou um aluno 10, mas também não sou abaixo de 7.</p>
+        <p>Bem, esse é meu site para o buiuzinho e já aviso que não sou um aluno 10, mas também não sou abaixo de 7.</p>
     </section>
 
     <section id="memorias">
@@ -42,7 +46,7 @@
                 <img src="memoria2.jpg" alt="Gincana escolar" class="slide">
                 <img src="memoria3.jpg" alt="Formatura" class="slide">
                 <img src="memoria4.jpg" alt="Passeio escolar" class="slide">
-                <img src="memoria5.jpg" alt="Reunião de amigos" class="slide">
+                <img src="memoria5.jpg" alt="Atividade em grupo" class="slide">
             </div>
             <button class="next">&#10095;</button>
         </div>
@@ -50,17 +54,29 @@
 
     <section id="amigos">
         <h2>Amigos</h2>
-        <p>Essas são algumas das melhores lembranças que tenho com meus amigos!</p>
-        <div class="friend-memories">
-            <img src="amigo1.jpg" alt="Foto com amigos" class="friend-photo">
-            <img src="amigo2.jpg" alt="Diversão com amigos" class="friend-photo">
-            <img src="amigo3.jpg" alt="Reunião com amigos" class="friend-photo">
+        <p>Meus melhores amigos que marcaram minha jornada escolar.</p>
+        <div id="fotos-engracadas">
+            <h3>Fotos Engraçadas</h3>
+            <img src="amigo1.jpg" alt="Amigo 1" class="slide">
+            <img src="amigo2.jpg" alt="Amigo 2" class="slide">
+        </div>
+        <div id="relatos">
+            <h3>Relatos</h3>
+            <p>Algumas histórias divertidas com meus amigos durante o colégio.</p>
         </div>
     </section>
 
-    <section id="como-foi-o-ano">
+    <section id="trabalhos">
+        <h2>Meus Trabalhos que Mais Gostei</h2>
+        <p>Aqui estão alguns dos trabalhos que mais gostei de fazer na escola.</p>
+        <img src="trabalho1.jpg" alt="Trabalho 1" class="slide">
+        <img src="trabalho2.jpg" alt="Trabalho 2" class="slide">
+    </section>
+
+    <section id="ano">
         <h2>Como Foi o Ano</h2>
-        <p>Esse ano foi cheio de aprendizados e momentos inesquecíveis! Desde os desafios acadêmicos até as amizades que fiz ao longo do caminho.</p>
+        <p>Um resumo de como foi meu ano escolar.</p>
+        <img src="ano1.jpg" alt="Resumo do Ano" class="slide">
     </section>
 
     <footer>
@@ -68,6 +84,7 @@
     </footer>
 
     <button id="back-to-top">↑ Voltar ao Topo</button>
+
     <script src="script.js"></script>
 </body>
-</html>
+    </html>
