@@ -6,111 +6,136 @@
     font-family: Arial, sans-serif;
 }
 
+/* Estilo do corpo */
 body {
-    background-color: #121212; /* Cor de fundo escura padrão */
-    color: #ffffff; /* Texto branco para o tema escuro */
-    transition: background-color 0.5s, color 0.5s; /* Transição suave para mudança de tema */
+    background-color: #121212; /* Fundo escuro */
+    color: #e0e0e0; /* Texto claro */
 }
 
-body.light-theme {
-    background-color: #ffffff; /* Cor de fundo clara */
-    color: #333333; /* Texto escuro para o tema claro */
-}
-
-/* Header */
+/* Cabeçalho */
 header {
-    background-color: #3b5998; /* Cor de fundo do cabeçalho */
+    background-color: #5e35b1; /* Roxo */
     color: white;
     padding: 2rem;
     text-align: center;
     position: relative;
 }
 
-.theme-toggle {
+header h1 {
+    margin-bottom: 0.5rem;
+}
+
+/* Botão de mudar tema */
+#theme-toggle {
     position: absolute;
-    top: 20px;
-    right: 20px;
-    cursor: pointer;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: white;
     font-size: 1.5rem;
-}
-
-.hamburger-menu {
     cursor: pointer;
-    font-size: 2rem;
-    position: absolute;
-    top: 20px;
-    left: 20px;
 }
 
-.nav-links {
-    display: none; /* Inicialmente oculto */
+/* Menu */
+.menu {
+    position: relative;
+}
+
+.hamburger {
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+nav {
+    display: none; /* Esconder por padrão */
     position: absolute;
-    top: 80px;
-    left: 20px;
-    background-color: #3b5998; /* Cor de fundo do menu */
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    padding: 1rem;
+    top: 3rem;
+    right: 0;
+    background-color: #5e35b1; /* Roxo */
+    border-radius: 0.5rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     z-index: 1000;
 }
 
-.nav-links.open {
-    display: block; /* Exibe o menu quando ativo */
-}
-
-.nav-links ul {
+nav ul {
     list-style: none;
+    padding: 1rem;
 }
 
-.nav-links a {
-    text-decoration: none;
+nav ul li {
+    margin: 0.5rem 0;
+}
+
+nav ul li a {
     color: white;
-    padding: 0.5rem;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
     display: block;
 }
 
-.nav-links .submenu {
-    display: none; /* Inicialmente oculto */
-    padding-left: 1rem; /* Indentação para submenus */
+nav ul li:hover {
+    background-color: #7e57c2; /* Roxo mais claro */
 }
 
-.nav-links li:hover .submenu {
-    display: block; /* Exibe submenu ao passar o mouse */
+/* Submenu */
+.submenu {
+    padding-left: 1.5rem;
 }
 
-/* Estilo do Carrossel */
+/* Seções */
+section {
+    padding: 2rem;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 1rem;
+    color: #ffeb3b; /* Amarelo */
+}
+
+/* Estilo do carrossel */
 .carousel {
     position: relative;
     width: 80%;
     margin: 2rem auto;
+    overflow: hidden;
+    border-radius: 10px; /* Cantos arredondados */
 }
 
 .slides {
     display: flex;
-    overflow: hidden;
-    width: 100%;
-    transition: transform 0.5s ease; /* Animação de transição suave */
+    transition: transform 0.5s ease;
 }
 
 .slide {
-    width: 100%;
+    min-width: 100%; /* Tamanho fixo para os slides */
+    transition: transform 0.5s ease;
 }
 
-button {
+.slide img {
+    width: 100%; /* Imagem ocupa todo o espaço do slide */
+    border-radius: 10px; /* Cantos arredondados das imagens */
+}
+
+.prev, .next {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(255, 255, 255, 0.8);
-    color: #333;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
     border: none;
     padding: 1rem;
     cursor: pointer;
     border-radius: 5px;
-    transition: background-color 0.3s; /* Animação de transição */
+    transition: background-color 0.3s ease;
 }
 
-button:hover {
-    background-color: rgba(255, 255, 255, 1);
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 .prev {
@@ -121,36 +146,50 @@ button:hover {
     right: 0;
 }
 
-/* Estilos para seções */
-section {
-    padding: 2rem;
-    text-align: center;
-}
-
-/* Botão "Voltar ao Topo" */
+/* Estilo do botão "Voltar ao Topo" */
 #back-to-top {
-    display: none; /* Inicialmente oculto */
     position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #3b5998;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: #5e35b1; /* Roxo */
     color: white;
     border: none;
     padding: 1rem;
     border-radius: 5px;
     cursor: pointer;
-    transition: opacity 0.3s; /* Animação de transição */
+    display: none; /* Inicialmente escondido */
+    transition: background-color 0.3s ease;
 }
 
 #back-to-top:hover {
-    opacity: 0.7; /* Efeito de hover */
+    background-color: #7e57c2; /* Roxo mais claro */
 }
 
-/* Footer */
+/* Estilo do rodapé */
 footer {
     background-color: #333;
     color: white;
     padding: 1rem;
     text-align: center;
     margin-top: 2rem;
+}
+
+/* Animação do menu hambúrguer */
+.menu.open nav {
+    display: block; /* Mostrar menu quando aberto */
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Animações do botão de tema */
+.theme-transition {
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
