@@ -1,91 +1,24 @@
-    * {
+/* Reset básico */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
-    transition: background-color 0.5s, color 0.5s;
 }
 
+/* Estilo geral */
 body {
-    background-color: #1a1a1a; /* Cor de fundo para tema escuro */
-    color: #eaeaea; /* Cor do texto para tema escuro */
+    background-color: #121212; /* Cor de fundo escura */
+    color: #E0E0E0; /* Texto claro */
+    transition: background-color 0.3s, color 0.3s;
 }
 
 header {
-    background-color: #4B0082; /* Roxo escuro */
+    background-color: #3D0B6B; /* Roxo */
     color: white;
     padding: 2rem;
     text-align: center;
-    position: relative;
-}
-
-.theme-toggle {
-    position: absolute;
-    top: 20px;
-    right: 70px;
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-}
-
-.menu-button {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    z-index: 2;
-}
-
-.menu-button .bar {
-    display: block;
-    width: 30px;
-    height: 4px;
-    margin: 5px auto;
-    background-color: white;
-    transition: all 0.3s ease;
-}
-
-.menu {
-    display: none; /* Escondido por padrão */
-    position: absolute;
-    top: 80px; /* Abaixo do cabeçalho */
-    right: 20px;
-    background-color: rgba(75, 0, 130, 0.9); /* Menu em roxo */
-    border-radius: 5px;
-    padding: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
-
-.menu ul {
-    list-style-type: none;
-}
-
-.menu ul li {
-    margin: 10px 0;
-}
-
-.menu ul li ul {
-    margin-left: 20px; /* Indentação para subtemas */
-}
-
-.menu ul li a {
-    color: white;
-    text-decoration: none;
-}
-
-.menu ul li a:hover {
-    text-decoration: underline;
-}
-
-section {
-    padding: 2rem;
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0.05);
-    margin: 1rem;
-    border-radius: 8px;
+    position: relative; /* Para posicionar o menu e o botão de tema */
 }
 
 h1, h2 {
@@ -96,6 +29,81 @@ p {
     margin-bottom: 1.5rem;
 }
 
+/* Estilos do menu */
+.menu-button {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.bar {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    margin: 3px 0;
+    transition: all 0.3s ease;
+}
+
+/* Estilo do menu */
+.menu {
+    display: none; /* Escondido por padrão */
+    position: absolute;
+    top: 60px; /* Abaixo do cabeçalho */
+    right: 15px;
+    background-color: #3D0B6B;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+.menu.open {
+    display: block; /* Mostra o menu quando aberto */
+}
+
+.menu ul {
+    list-style: none;
+}
+
+.menu ul li {
+    padding: 0.5rem 0;
+}
+
+.menu ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.submenu {
+    display: none; /* Escondido por padrão */
+    margin-top: 0.5rem;
+}
+
+.menu ul li:hover .submenu {
+    display: block; /* Mostra o submenu ao passar o mouse */
+}
+
+.theme-toggle {
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Estilo do carrossel */
 .carousel {
     position: relative;
     width: 80%;
@@ -109,12 +117,12 @@ p {
 }
 
 .slide {
-    width: 80%; /* Ajuste do tamanho das imagens */
-    margin: 0 auto;
+    width: 100%;
+    height: auto; /* Ajuste a altura das imagens */
     transition: transform 0.5s ease;
 }
 
-button {
+button.prev, button.next {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -133,75 +141,65 @@ button {
     right: 0;
 }
 
-form {
-    max-width: 400px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-}
-
-input, textarea {
-    margin-bottom: 1rem;
-    padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-button[type="submit"] {
-    background-color: #4B0082; /* Roxo */
-    color: white;
-    border: none;
-    padding: 0.75rem;
-    cursor: pointer;
-}
-
-button[type="submit"]:hover {
-    background-color: #3A007A; /* Roxo mais escuro */
-}
-
-footer {
-    background-color: #333;
-    color: white;
-    padding: 1rem;
+/* Seções */
+section {
+    padding: 2rem;
     text-align: center;
-    margin-top: 2rem;
 }
 
+/* Botão "Voltar ao topo" */
 #back-to-top {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    display: none; /* Escondido por padrão */
-    background-color: #4B0082; /* Roxo */
+    background-color: #3D0B6B;
     color: white;
     border: none;
-    padding: 10px;
+    padding: 0.75rem;
     cursor: pointer;
     border-radius: 5px;
+    display: none; /* Escondido por padrão */
 }
 
 #back-to-top:hover {
-    background-color: #3A007A; /* Roxo mais escuro */
+    background-color: #5E20A1; /* Tom mais claro ao passar o mouse */
 }
 
-/* Estilo para tema claro */
+/* Estilos para tema claro */
 body.light-theme {
-    background-color: #ffffff; /* Cor de fundo para tema claro */
-    color: #333; /* Cor do texto para tema claro */
+    background-color: #FFFFFF; /* Fundo claro */
+    color: #333333; /* Texto escuro */
 }
 
-header.light-theme {
-    background-color: #f9c74f; /* Amarelo */
+body.light-theme header {
+    background-color: #FFD700; /* Amarelo para cabeçalho */
 }
 
-.menu.light-theme {
-    background-color: rgba(255, 255, 255, 0.9); /* Menu em branco */
+body.light-theme .menu {
+    background-color: #FFD700; /* Menu claro */
 }
 
-.menu.light-theme ul li a {
-    color: #333; /* Cor do texto para tema claro */
+body.light-theme .menu ul li a {
+    color: #333333; /* Texto escuro no menu claro */
 }
 
-.carousel .slide {
-    width: 80%; /* Ajuste do tamanho das imagens */
+body.light-theme #back-to-top {
+    background-color: #FFD700; /* Botão claro */
 }
+
+body.light-theme #back-to-top:hover {
+    background-color: #FFC300; /* Tom mais escuro ao passar o mouse */
+}
+
+/* Animações */
+.menu-button.active .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-button.active .bar:nth-child(2) {
+    opacity: 0; /* Esconde o meio */
+}
+
+.menu-button.active .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+   }
