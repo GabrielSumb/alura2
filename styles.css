@@ -1,81 +1,70 @@
-/* Reset básico */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
+    margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #121212; /* Cor de fundo do tema escuro */
-    color: #ffffff; /* Cor do texto para o tema escuro */
-    transition: background-color 0.5s, color 0.5s;
+    background-color: #121212; /* Fundo escuro */
+    color: #ffffff; /* Texto claro */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-/* Estilos do header */
 header {
-    text-align: center;
+    background-color: #1E1E1E; /* Header mais escuro */
+    width: 100%;
     padding: 20px;
+    text-align: center;
     position: relative;
 }
 
 .menu-button {
-    display: flex;
-    flex-direction: column;
     cursor: pointer;
-    margin: 10px auto;
-    width: 30px;
+    display: inline-block;
+    margin: 10px;
 }
 
 .menu-button div {
+    width: 30px;
     height: 4px;
-    width: 100%;
-    background-color: #fff;
-    margin: 3px 0;
-    transition: transform 0.3s;
+    background-color: #ffffff;
+    margin: 5px;
+    transition: all 0.3s ease;
 }
 
 .menu-button.active div:nth-child(1) {
-    transform: translateY(7px) rotate(45deg);
+    transform: rotate(45deg) translate(5px, 5px);
 }
 
 .menu-button.active div:nth-child(2) {
-    opacity: 0;
+    opacity: 0; /* Esconde o meio */
 }
 
 .menu-button.active div:nth-child(3) {
-    transform: translateY(-7px) rotate(-45deg);
+    transform: rotate(-45deg) translate(5px, -5px);
 }
 
 .theme-toggle {
     cursor: pointer;
+    font-size: 24px;
     position: absolute;
     top: 20px;
     right: 20px;
 }
 
-/* Estilos do menu */
 .menu {
-    display: none;
-    flex-direction: column;
-    background-color: #1e1e1e;
-    position: absolute;
-    top: 60px;
-    right: 20px;
-    border-radius: 8px;
-    padding: 10px;
+    display: none; /* Esconde o menu inicialmente */
 }
 
 .menu.open {
-    display: flex;
+    display: block; /* Mostra o menu quando aberto */
 }
 
 .menu ul {
-    list-style-type: none;
+    list-style: none;
+    padding: 0;
 }
 
 .menu ul li {
-    padding: 10px 15px;
+    margin: 10px 0;
 }
 
 .menu ul li a {
@@ -83,104 +72,74 @@ header {
     text-decoration: none;
 }
 
-.menu ul li a:hover {
-    text-decoration: underline;
-}
-
-/* Estilos da seção */
-section {
-    margin: 20px auto;
-    max-width: 800px; /* largura máxima para manter o conteúdo centralizado */
-    padding: 20px;
-    border-radius: 8px;
-    background-color: #1e1e1e;
-}
-
-.tema-box {
-    margin: 20px auto;
-    padding: 20px;
-    border: 1px solid #444;
-    border-radius: 8px;
-}
-
-/* Estilos do carrossel */
 .carousel {
-    position: relative;
-    overflow: hidden;
-    max-width: 800px;
-    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .slides {
-    display: flex;
+    position: relative;
+    overflow: hidden;
+    width: 80%; /* Ajusta a largura do carrossel */
 }
 
 .slide {
-    min-width: 100%; /* Largura da imagem reduzida para 30% menor */
-    height: auto;
+    width: 100%; /* A imagem ocupa 100% da largura do contêiner */
+    display: none; /* Esconde todas as imagens inicialmente */
 }
 
-/* Botões do carrossel */
-button.prev,
-button.next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+.slide.active {
+    display: block; /* Mostra a imagem ativa */
+}
+
+button.prev, button.next {
     background-color: rgba(255, 255, 255, 0.5);
     border: none;
     cursor: pointer;
     padding: 10px;
-    border-radius: 50%;
-    font-size: 18px;
+    margin: 10px;
 }
 
-button.prev {
-    left: 10px;
+.tema-box {
+    background-color: #1E1E1E;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    width: 80%; /* Aumenta a largura da caixa de texto */
+    max-width: 800px; /* Limita a largura máxima */
+    text-align: justify; /* Justifica o texto */
 }
 
-button.next {
-    right: 10px;
-}
-
-/* Estilos do botão "Voltar ao Topo" */
 #back-to-top {
     display: none; /* Inicialmente oculto */
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #6200ea; /* Cor de fundo do botão */
+    background-color: #1E1E1E;
     color: white;
     border: none;
     border-radius: 50%; /* Bordas arredondadas */
-    padding: 15px;
+    width: 50px; /* Tamanho do botão de voltar ao topo */
+    height: 50px; /* Tamanho do botão de voltar ao topo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px; /* Tamanho do ícone */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Sombra para efeito de profundidade */
     cursor: pointer;
-    font-size: 20px;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s ease;
 }
 
 #back-to-top:hover {
-    background-color: #3700b3; /* Cor de fundo ao passar o mouse */
+    background-color: rgba(255, 255, 255, 0.7); /* Mudança de cor ao passar o mouse */
 }
 
-/* Estilos do footer */
+/* Estilo para o footer */
 footer {
+    margin-top: auto; /* Empurra o footer para o final da página */
+    padding: 10px;
     text-align: center;
-    padding: 20px;
-    background-color: #1e1e1e;
-    position: relative;
-}
-
-/* Tema claro */
-.light-theme {
-    background-color: #ffffff; /* Cor de fundo do tema claro */
-    color: #000000; /* Cor do texto para o tema claro */
-}
-
-.light-theme .menu {
-    background-color: #f1f1f1; /* Cor de fundo do menu no tema claro */
-}
-
-.light-theme .tema-box {
-    background-color: #ffffff; /* Cor do fundo das caixas de texto no tema claro */
-    border: 1px solid #ddd; /* Borda das caixas de texto no tema claro */
+    background-color: #1E1E1E; /* Fundo do footer */
+    width: 100%;
 }
