@@ -1,4 +1,4 @@
-
+/* Estilos gerais */
 * {
     margin: 0;
     padding: 0;
@@ -7,13 +7,13 @@
 }
 
 body {
-    background-color: #121212; /* Tema escuro: fundo escuro */
-    color: #ffffff; /* Texto claro */
+    background-color: #121212; /* Cor de fundo escura */
+    color: #e0e0e0; /* Texto claro para contraste */
     transition: background-color 0.5s, color 0.5s;
 }
 
 header {
-    background-color: #673AB7; /* Roxo */
+    background-color: #3a0a4b; /* Roxo escuro */
     color: white;
     padding: 2rem;
     text-align: center;
@@ -21,78 +21,63 @@ header {
 }
 
 .theme-toggle {
+    cursor: pointer;
+    font-size: 24px;
+    position: absolute;
+    top: 20px;
+    right: 60px;
+}
+
+.menu-button {
+    cursor: pointer;
+    font-size: 24px;
     position: absolute;
     top: 20px;
     right: 20px;
-    cursor: pointer;
 }
 
-.hamburger {
-    cursor: pointer;
-    display: inline-block;
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    z-index: 10;
-}
-
-.hamburger .bar {
-    display: block;
-    width: 30px;
-    height: 3px;
-    margin: 5px auto;
-    background-color: white;
-    transition: all 0.3s;
-}
-
-.navbar {
-    display: none; /* Oculto por padrão */
-    position: absolute;
-    top: 70px; /* Ajuste de altura do menu */
-    left: 0;
-    background-color: #4A148C; /* Roxo escuro */
-    width: 100%;
-    z-index: 5;
-}
-
-.navbar ul {
-    list-style-type: none;
-    padding: 1rem;
-}
-
-.navbar li {
-    margin: 10px 0;
-}
-
-.navbar a {
-    text-decoration: none;
-    color: white;
-    font-size: 18px;
-}
-
-.submenu {
+.menu {
     display: none;
-    padding-left: 20px;
+    background-color: #3a0a4b;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    padding: 1rem;
+    border-radius: 8px;
 }
 
-.navbar li:hover .submenu {
+.menu.open {
     display: block;
 }
 
-section {
+.menu ul {
+    list-style: none;
+}
+
+.menu ul li {
+    margin-bottom: 0.5rem;
+}
+
+#temas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
     padding: 2rem;
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.7); /* Fundo das seções */
+}
+
+.tema-box {
+    background-color: #2a0a35; /* Cor do quadrado */
+    border: 1px solid #ffffff;
+    border-radius: 10px;
+    width: calc(45% - 20px); /* Ajustar largura dos quadrados */
+    padding: 1.5rem;
     margin: 10px;
-    border-radius: 10px; /* Bordas arredondadas */
+    transition: transform 0.3s, background-color 0.3s;
 }
 
-h1, h2 {
-    margin-bottom: 1rem;
-}
-
-p {
-    margin-bottom: 1.5rem;
+.tema-box:hover {
+    transform: scale(1.05); /* Animação de aumento */
+    background-color: #3a0a4b; /* Cor ao passar o mouse */
 }
 
 .carousel {
@@ -109,8 +94,7 @@ p {
 
 .slide {
     width: 100%;
-    max-height: 400px; /* Altura máxima das imagens */
-    object-fit: cover; /* Ajusta a imagem para cobrir o contêiner */
+    height: auto; /* Ajusta altura */
     transition: transform 0.5s ease;
 }
 
@@ -133,82 +117,71 @@ button {
     right: 0;
 }
 
-form {
-    max-width: 400px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-}
-
-input, textarea {
-    margin-bottom: 1rem;
-    padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-button[type="submit"] {
-    background-color: #3b5998;
+button#back-to-top {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #3a0a4b;
     color: white;
     border: none;
-    padding: 0.75rem;
+    padding: 10px;
+    border-radius: 5px;
     cursor: pointer;
 }
 
-button[type="submit"]:hover {
-    background-color: #2a4271;
+button#back-to-top:hover {
+    background-color: #2a0a35;
 }
 
 footer {
-    background-color: #333;
+    background-color: #3a0a4b; /* Roxo escuro */
     color: white;
     padding: 1rem;
     text-align: center;
     margin-top: 2rem;
 }
 
-/* Estilos para o botão Voltar ao topo */
-#back-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #673AB7; /* Roxo */
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    display: none; /* Ocultar por padrão */
-    transition: background-color 0.3s;
-}
-
-#back-to-top:hover {
-    background-color: #4A148C; /* Roxo escuro */
-}
-
 /* Estilos para o tema claro */
-body.light {
+body.light-theme {
     background-color: #ffffff; /* Fundo claro */
-    color: #000000; /* Texto escuro */
+    color: #333333; /* Texto escuro */
 }
 
-body.light header {
-    background-color: #FFC107; /* Amarelo */
+header.light-theme, 
+.menu.light-theme {
+    background-color: #f2c94c; /* Amarelo claro */
+    color: #333333; /* Texto escuro */
 }
 
-body.light .navbar {
-    background-color: #FF9800; /* Laranja */
+.tema-box.light-theme {
+    background-color: #f7f7f7; /* Fundo claro dos quadrados */
+    border: 1px solid #cccccc; /* Borda clara */
+    color: #333333; /* Texto escuro */
 }
 
-body.light section {
-    background-color: rgba(255, 255, 255, 0.9); /* Fundo das seções claro */
-    color: #000; /* Texto escuro */
+.menu-button.active {
+    transform: rotate(45deg); /* Rotação para "X" */
 }
 
-body.light #back-to-top {
-    background-color: #FFC107; /* Amarelo */
+/* Animações para menu */
+.menu-button.active::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: #f2c94c; /* Cor do risco */
+    transform: rotate(90deg); /* Rotação para criar o "X" */
 }
 
-body.light #back-to-top:hover {
-    background-color: #FFA000; /* Amarelo escuro */
+.menu-button.active::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: #f2c94c; /* Cor do risco */
 }
