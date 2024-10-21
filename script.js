@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Botão Voltar ao Topo
     window.addEventListener('scroll', function() {
         if (window.scrollY > 300) {
-            backToTopButton.style.display = 'block';
+            backToTopButton.style.display = 'flex'; // Alterado para flex para centralizar o conteúdo
         } else {
             backToTopButton.style.display = 'none';
         }
