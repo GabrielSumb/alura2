@@ -83,17 +83,31 @@ header {
     text-align: center; /* Centraliza o título */
 }
 
+
+
+
+/* Outros estilos... */
+
 .carousel {
     position: relative;
-    width: 55%;
+    width: 80%;
     margin: 2rem auto;
 }
 
 .slides {
     display: flex;
     overflow: hidden;
-    width: 55%;
+    width: 100%;
 }
+
+/* Aqui você adiciona o trecho que atualiza o tamanho das imagens */
+.carousel .slide {
+    width: 58; /* Reduzido para 70% do tamanho original */
+    height: auto; /* Mantém a proporção da altura */
+    transition: transform 0.5s ease;
+    margin: 0 auto; /* Centraliza as imagens no carrossel */
+}
+
 
 .slide {
     width: 55%;
