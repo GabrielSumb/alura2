@@ -80,9 +80,10 @@ header {
     background-color: #3a0a4b; /* Cor ao passar o mouse */
 }
 
+/* Ajustes no carrossel e nas imagens */
 .carousel {
     position: relative;
-    width: 80%;
+    width: 50%; /* Ajustar o tamanho do carrossel para 50% da largura da tela */
     margin: 2rem auto;
 }
 
@@ -93,9 +94,10 @@ header {
 }
 
 .slide {
-    width: 100%;
-    height: auto; /* Ajusta altura */
+    width: 80%; /* Ajuste a largura de cada slide para 80% do contêiner */
+    height: auto;
     transition: transform 0.5s ease;
+    margin: 0 auto; /* Centraliza a imagem no slide */
 }
 
 button {
@@ -184,4 +186,4 @@ header.light-theme,
     width: 100%;
     height: 4px;
     background: #f2c94c; /* Cor do risco */
-    }
+}
