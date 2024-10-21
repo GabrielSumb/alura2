@@ -26,6 +26,8 @@ document.addEventListener('DOMContentLoaded', function() {
     menuButton.addEventListener('click', function() {
         menu.classList.toggle('open');
         menuButton.classList.toggle('active');
+        // Altera a animação do menu hambúrguer para X
+        menuButton.classList.toggle('cross');
     });
 
     // Botão Voltar ao Topo
@@ -50,11 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Função para mudar os slides
     function showSlide(index) {
         slides.forEach((slide, i) => {
-            if (i === index) {
-                slide.style.display = 'block'; // Exibe a imagem atual
-            } else {
-                slide.style.display = 'none'; // Oculta as demais imagens
-            }
+            slide.style.display = (i === index) ? 'block' : 'none'; // Alteração para apenas mostrar o slide atual
         });
     }
 
