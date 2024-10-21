@@ -44,7 +44,6 @@ header {
     right: 20px;
     padding: 1rem;
     border-radius: 8px;
-    z-index: 10;
 }
 
 .menu.open {
@@ -57,21 +56,6 @@ header {
 
 .menu ul li {
     margin-bottom: 0.5rem;
-    position: relative;
-}
-
-.submenu {
-    display: none; /* Oculta submenus por padrão */
-    position: absolute;
-    top: 100%; /* Abaixo do item pai */
-    left: 0;
-    background-color: #3a0a4b;
-    padding: 0.5rem;
-    border-radius: 8px;
-}
-
-.menu ul li:hover > .submenu {
-    display: block; /* Exibe submenu ao passar o mouse */
 }
 
 #temas {
@@ -200,4 +184,4 @@ header.light-theme,
     width: 100%;
     height: 4px;
     background: #f2c94c; /* Cor do risco */
-}
+    }
