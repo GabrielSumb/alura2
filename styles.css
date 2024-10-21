@@ -1,134 +1,112 @@
-
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0;
-    background-color: #121212; /* Fundo escuro */
-    color: #ffffff; /* Texto claro */
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.light-theme {
-    background-color: #ffffff; /* Fundo claro */
-    color: #000000; /* Texto escuro */
+    font-family: Arial, sans-serif;
+    background-color: #222; /* Cor de fundo para tema escuro */
+    color: #fff;
 }
 
 header {
-    background-color: #1e1e1e; /* Fundo do cabeçalho escuro */
-    padding: 20px;
     text-align: center;
+    padding: 20px;
+    background-color: #444;
 }
 
 .menu-button {
     cursor: pointer;
     display: inline-block;
-    margin: 10px;
+    margin: 10px 0;
 }
 
 .menu-button div {
-    width: 30px;
-    height: 3px;
+    width: 35px;
+    height: 5px;
     background-color: #fff;
-    margin: 5px 0;
-    transition: all 0.3s;
+    margin: 5px auto;
+    transition: all 0.3s ease;
 }
 
-.menu-button.active div:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-}
-
-.menu-button.active div:nth-child(2) {
-    opacity: 0;
-}
-
-.menu-button.active div:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
-}
-
-nav.menu {
+.menu {
     display: none;
-}
-
-nav.menu.open {
-    display: block;
-    margin-top: 10px;
-}
-
-nav ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-nav ul li {
-    margin: 5px 0;
-}
-
-nav a {
-    text-decoration: none;
-    color: inherit;
-    padding: 10px;
-    display: block;
-    border-radius: 5px;
-}
-
-nav a:hover {
-    background-color: #333; /* Fundo ao passar o mouse */
-}
-
-.tema-box {
-    background-color: #1e1e1e; /* Fundo das caixas */
-    padding: 20px;
-    margin: 20px auto; /* Centraliza as caixas */
-    border-radius: 10px;
-    width: 90%; /* Ajuste a largura para 90% */
-    max-width: 900px; /* Limita a largura máxima */
-    transition: background-color 0.3s;
-}
-
-.light-theme .tema-box {
-    background-color: #f0f0f0; /* Fundo das caixas no tema claro */
-}
-
-#back-to-top {
-    display: none; /* Inicialmente escondido */
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #1e1e1e;
-    color: #ffffff;
-    border: none;
-    border-radius: 50%; /* Bordas arredondadas */
-    padding: 10px;
-    cursor: pointer;
-}
-
-.light-theme #back-to-top {
-    background-color: #cccccc; /* Cor do botão no tema claro */
-}
-
-footer {
     text-align: center;
-    padding: 20px;
-    background-color: #1e1e1e;
-    color: #ffffff;
-    position: relative;
+}
+
+.menu.open {
+    display: block;
+}
+
+.menu a {
+    color: #fff;
+    text-decoration: none;
+    margin: 10px 0;
+    display: block;
+}
+
+.theme-toggle {
+    cursor: pointer;
+    font-size: 24px;
 }
 
 .carousel {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     position: relative;
-    margin: 20px auto;
+    margin: 0 auto;
+    max-width: 600px; /* Definindo um tamanho máximo para o carrossel */
+    overflow: hidden;
 }
 
 .slides {
     display: flex;
-    overflow: hidden;
 }
 
 .slide {
-    width: 70%; /* Ajuste a largura das imagens */
-    max-width: 500px; /* Limita a largura máxima */
-    transition: none; /* Remove animação de transição */
-    }
+    display: block;
+    width: 70%; /* Diminuindo o tamanho da imagem */
+    max-width: 100%; /* Garantindo que não exceda o contêiner */
+    margin: auto; /* Centralizando as imagens */
+}
+
+button.prev, button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+button.prev {
+    left: 10px;
+}
+
+button.next {
+    right: 10px;
+}
+
+.tema-box {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #555;
+    border-radius: 8px; /* Bordas arredondadas */
+    text-align: center;
+    width: 80%; /* Largura da caixa */
+}
+
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    background-color: #444;
+    border: none;
+    border-radius: 50%; /* Bordas arredondadas */
+    padding: 10px;
+    cursor: pointer;
+    color: white;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #444;
+}
