@@ -46,6 +46,7 @@ header {
     left: 20px; /* Menu alinhado à esquerda */
     padding: 1rem;
     border-radius: 8px;
+    z-index: 1000; /* Para garantir que o menu apareça sobre outros elementos */
 }
 
 .menu.open {
@@ -58,6 +59,15 @@ header {
 
 .menu ul li {
     margin-bottom: 0.5rem;
+}
+
+.menu ul li a {
+    color: #f2c94c; /* Cor dos links no menu */
+    text-decoration: none; /* Remove o sublinhado */
+}
+
+.menu ul li a:hover {
+    text-decoration: underline; /* Sublinha ao passar o mouse */
 }
 
 #temas {
@@ -192,4 +202,4 @@ header.light-theme,
     width: 100%;
     height: 4px;
     background: #f2c94c; /* Cor do risco */
-}
+        }
