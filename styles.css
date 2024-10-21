@@ -1,3 +1,4 @@
+/* Estilos gerais */
 * {
     margin: 0;
     padding: 0;
@@ -8,6 +9,7 @@
 body {
     background-color: #121212; /* Cor de fundo escura */
     color: #e0e0e0; /* Texto claro para contraste */
+    transition: background-color 0.5s, color 0.5s;
 }
 
 header {
@@ -15,6 +17,7 @@ header {
     color: white;
     padding: 2rem;
     text-align: center;
+    position: relative;
 }
 
 .theme-toggle {
@@ -41,6 +44,7 @@ header {
     right: 20px;
     padding: 1rem;
     border-radius: 8px;
+    z-index: 10;
 }
 
 .menu.open {
@@ -53,6 +57,21 @@ header {
 
 .menu ul li {
     margin-bottom: 0.5rem;
+    position: relative;
+}
+
+.submenu {
+    display: none; /* Oculta submenus por padrão */
+    position: absolute;
+    top: 100%; /* Abaixo do item pai */
+    left: 0;
+    background-color: #3a0a4b;
+    padding: 0.5rem;
+    border-radius: 8px;
+}
+
+.menu ul li:hover > .submenu {
+    display: block; /* Exibe submenu ao passar o mouse */
 }
 
 #temas {
@@ -154,6 +173,7 @@ header.light-theme,
 .tema-box.light-theme {
     background-color: #f7f7f7; /* Fundo claro dos quadrados */
     border: 1px solid #cccccc; /* Borda clara */
+    color: #333333; /* Texto escuro */
 }
 
 .menu-button.active {
