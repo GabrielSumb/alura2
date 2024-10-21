@@ -76,7 +76,7 @@ header {
 #temas {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center; /* Centraliza os itens horizontalmente */
     padding: 2rem;
 }
 
@@ -84,17 +84,16 @@ header {
     background-color: #2a0a35; /* Cor do quadrado */
     border: 1px solid #ffffff;
     border-radius: 10px;
-    width: calc(45% - 20px); /* Ajustar largura dos quadrados */
+    width: calc(30% - 20px); /* Ajuste a largura para 30% */
     padding: 1.5rem;
     margin: 10px;
     transition: transform 0.3s, background-color 0.3s;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+    text-align: center; /* Centraliza o texto dentro do quadrado */
 }
 
 .tema-box:hover {
     transform: scale(1.05); /* Animação de aumento */
     background-color: #3a0a4b; /* Cor ao passar o mouse */
-    color: white; /* Texto branco ao passar o mouse */
 }
 
 .carousel {
