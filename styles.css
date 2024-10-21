@@ -39,13 +39,14 @@ header {
 
 .menu {
     display: none;
-    background-color: #3a0a4b;
+    background-color: #3a0a4b; /* Cor de fundo do menu */
     position: absolute;
     top: 60px;
     left: 20px; /* Mover para o lado esquerdo */
     padding: 1rem;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra para o menu */
+    z-index: 1000; /* Colocar acima de outros elementos */
 }
 
 .menu.open {
@@ -54,17 +55,23 @@ header {
 
 .menu ul {
     list-style: none;
+    padding: 0; /* Remove padding do UL */
 }
 
 .menu ul li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem; /* Aumenta o espaço entre os itens */
     color: white; /* Texto branco no menu */
+    font-family: 'Montserrat', sans-serif; /* Define a fonte para o menu */
+    font-size: 18px; /* Tamanho da fonte para o menu */
     transition: color 0.3s; /* Transição suave para hover */
 }
 
 .menu ul li:hover {
     color: #f2c94c; /* Cor ao passar o mouse */
+    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
 }
+
+/* Resto do CSS permanece igual... */
 
 #temas {
     display: flex;
