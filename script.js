@@ -48,24 +48,23 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentSlide = 0;
 
     // Função para mudar os slides
-    function showSlide(index) {
-        slides.forEach((slide, i) => {
-            slide.style.transform = `translateX(${100 * (i - index)}%)`;
-        });
-    }
+function showSlide(index) {
+    slides.forEach((slide, i) => {
+        slide.style.transform = `translateX(${100 * (i - index)}%)`;
+    });
+}
 
-    // Exibir o slide inicial
+// Exibir o slide inicial
+showSlide(currentSlide);
+
+// Botão "Próximo" - Move para o próximo slide
+nextButton.addEventListener('click', function() {
+    currentSlide = (currentSlide + 1) % slides.length; // Vai para o próximo slide, reinicia ao final
     showSlide(currentSlide);
+});
 
-    // Botão "Próximo" - Move para o próximo slide
-    nextButton.addEventListener('click', function() {
-        currentSlide = (currentSlide + 1) % slides.length; // Vai para o próximo slide, reinicia ao final
-        showSlide(currentSlide);
-    });
-
-    // Botão "Anterior" - Move para o slide anterior
-    prevButton.addEventListener('click', function() {
-        currentSlide = (currentSlide - 1 + slides.length) % slides.length; // Vai para o slide anterior
-        showSlide(currentSlide);
-    });
+// Botão "Anterior" - Move para o slide anterior
+prevButton.addEventListener('click', function() {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length; // Vai para o slide anterior
+    showSlide(currentSlide);
 });
