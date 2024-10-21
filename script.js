@@ -11,14 +11,14 @@ document.addEventListener('DOMContentLoaded', function() {
     themeToggle.addEventListener('click', function() {
         if (currentTheme === 'dark') {
             body.classList.add('light-theme');
-            temaBoxes.forEach(box => box.classList.add('light-theme')); // Adiciona classe de tema claro a todos os quadrados
+            temaBoxes.forEach(box => box.classList.add('light-theme'));
             currentTheme = 'light';
-            themeToggle.textContent = '🌙'; // Muda para símbolo da lua
+            themeToggle.textContent = '🌙'; // Símbolo da lua para o tema claro
         } else {
             body.classList.remove('light-theme');
-            temaBoxes.forEach(box => box.classList.remove('light-theme')); // Remove classe de tema claro de todos os quadrados
+            temaBoxes.forEach(box => box.classList.remove('light-theme'));
             currentTheme = 'dark';
-            themeToggle.textContent = '☀️'; // Muda para símbolo do sol
+            themeToggle.textContent = '☀️'; // Símbolo do sol para o tema escuro
         }
     });
 
@@ -39,5 +39,33 @@ document.addEventListener('DOMContentLoaded', function() {
 
     backToTopButton.addEventListener('click', function() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Carrossel de imagens
+    const slides = document.querySelectorAll('.slide');
+    const prevButton = document.querySelector('.prev');
+    const nextButton = document.querySelector('.next');
+    let currentSlide = 0;
+
+    // Função para mudar os slides
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.style.transform = `translateX(${100 * (i - index)}%)`;
+        });
+    }
+
+    // Exibir o slide inicial
+    showSlide(currentSlide);
+
+    // Botão "Próximo" - Move para o próximo slide
+    nextButton.addEventListener('click', function() {
+        currentSlide = (currentSlide + 1) % slides.length; // Vai para o próximo slide, reinicia ao final
+        showSlide(currentSlide);
+    });
+
+    // Botão "Anterior" - Move para o slide anterior
+    prevButton.addEventListener('click', function() {
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length; // Vai para o slide anterior
+        showSlide(currentSlide);
     });
 });
