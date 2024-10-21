@@ -41,16 +41,16 @@ document.addEventListener('DOMContentLoaded', function() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
-    // Carrossel de imagens
+    // Carrossel de imagens sem animação
     const slides = document.querySelectorAll('.slide');
     const prevButton = document.querySelector('.prev');
     const nextButton = document.querySelector('.next');
     let currentSlide = 0;
 
-    // Função para mudar os slides
+    // Função para mudar os slides sem animação
     function showSlide(index) {
         slides.forEach((slide, i) => {
-            slide.style.transform = `translateX(${100 * (i - index)}%)`;
+            slide.style.display = (i === index) ? 'block' : 'none'; // Mostra apenas o slide atual
         });
     }
 
