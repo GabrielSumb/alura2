@@ -128,17 +128,25 @@ button {
 }
 
 #back-to-top {
-    display: none; /* Inicialmente ocultar */
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background-color: #444;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 10px;
-    cursor: pointer;
-    z-index: 1000;
+    position: fixed; /* Fixa o botão na tela */
+    bottom: 20px; /* Distância do fundo da tela */
+    right: 20px; /* Distância da direita da tela */
+    background-color: #444; /* Cor de fundo do botão */
+    color: white; /* Cor do texto */
+    border: none; /* Remove a borda */
+    border-radius: 5px; /* Bordas arredondadas */
+    width: 50px; /* Largura do botão */
+    height: 50px; /* Altura do botão */
+    font-size: 20px; /* Tamanho da fonte */
+    display: flex; /* Centraliza o conteúdo */
+    align-items: center; /* Alinha verticalmente */
+    justify-content: center; /* Alinha horizontalmente */
+    cursor: pointer; /* Mostra o cursor de clique */
+    transition: background-color 0.3s; /* Transição de cor */
+}
+
+#back-to-top:hover {
+    background-color: #666; /* Cor de fundo ao passar o mouse */
 }
 
 footer {
