@@ -1,112 +1,211 @@
-body {
+
+/* Estilos gerais */
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-family: Arial, sans-serif;
-    background-color: #222; /* Cor de fundo para tema escuro */
-    color: #fff;
+}
+
+body {
+    background-color: #121212; /* Cor de fundo escura */
+    color: #e0e0e0; /* Texto claro para contraste */
+    transition: background-color 0.5s, color 0.5s;
 }
 
 header {
+    background-color: #3a0a4b; /* Roxo escuro */
+    color: white;
+    padding: 2rem;
     text-align: center;
-    padding: 20px;
-    background-color: #444;
+    position: relative;
 }
 
+/* Menu hambúrguer à esquerda */
 .menu-button {
     cursor: pointer;
-    display: inline-block;
-    margin: 10px 0;
+    font-size: 24px;
+    position: absolute;
+    top: 20px;
+    left: 20px; /* Movido para a esquerda */
+    z-index: 101;
+    transition: transform 0.3s ease;
 }
 
-.menu-button div {
-    width: 35px;
-    height: 5px;
-    background-color: #fff;
-    margin: 5px auto;
-    transition: all 0.3s ease;
+/* Botão de alternar tema à direita */
+.theme-toggle {
+    cursor: pointer;
+    font-size: 24px;
+    position: absolute;
+    top: 20px;
+    right: 20px; /* Movido para a direita */
 }
 
 .menu {
     display: none;
-    text-align: center;
+    background-color: #3a0a4b;
+    position: absolute;
+    top: 60px;
+    left: 20px; /* Menu alinhado à esquerda */
+    padding: 1rem;
+    border-radius: 8px;
+    z-index: 1000; /* Para garantir que o menu apareça sobre outros elementos */
 }
 
 .menu.open {
     display: block;
 }
 
-.menu a {
-    color: #fff;
-    text-decoration: none;
-    margin: 10px 0;
-    display: block;
+.menu ul {
+    list-style: none;
 }
 
-.theme-toggle {
-    cursor: pointer;
-    font-size: 24px;
+.menu ul li {
+    margin-bottom: 0.5rem;
+}
+
+.menu ul li a {
+    color: #f2c94c; /* Cor dos links no menu */
+    text-decoration: none; /* Remove o sublinhado */
+}
+
+.menu ul li a:hover {
+    text-decoration: underline; /* Sublinha ao passar o mouse */
+}
+
+#temas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 2rem;
+}
+
+.tema-box {
+    background-color: #2a0a35; /* Cor do quadrado */
+    border: 1px solid #ffffff;
+    border-radius: 10px;
+    width: calc(45% - 20px); /* Ajustar largura dos quadrados */
+    padding: 1.5rem;
+    margin: 10px;
+    transition: transform 0.3s, background-color 0.3s;
+    text-align: center;
+}
+
+.tema-box:hover {
+    transform: scale(1.05); /* Animação de aumento */
+    background-color: #3a0a4b; /* Cor ao passar o mouse */
 }
 
 .carousel {
     position: relative;
-    margin: 0 auto;
-    max-width: 600px; /* Definindo um tamanho máximo para o carrossel */
-    overflow: hidden;
+    width: 80%;
+    margin: 2rem auto;
 }
 
 .slides {
     display: flex;
+    overflow: hidden;
+    width: 100%;
 }
 
-.slide {
-    display: block;
-    width: 70%; /* Diminuindo o tamanho da imagem */
-    max-width: 100%; /* Garantindo que não exceda o contêiner */
-    margin: auto; /* Centralizando as imagens */
+/* Aqui você remove a transição */
+.carousel .slide {
+    width: 70%; /* Mantém o tamanho reduzido */
+    height: auto; /* Mantém a proporção da altura */
+    margin: 0 auto; /* Centraliza as imagens no carrossel */
+    transition: none; /* Elimina qualquer animação de transição */
 }
 
-button.prev, button.next {
+button {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
     border: none;
+    padding: 1rem;
     cursor: pointer;
-    padding: 10px;
 }
 
-button.prev {
-    left: 10px;
+.prev {
+    left: 0;
 }
 
-button.next {
-    right: 10px;
+.next {
+    right: 0;
 }
 
-.tema-box {
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #555;
-    border-radius: 8px; /* Bordas arredondadas */
-    text-align: center;
-    width: 80%; /* Largura da caixa */
-}
-
-#back-to-top {
+/* Botão de voltar ao topo */
+button#back-to-top {
+    display: none;
     position: fixed;
     bottom: 20px;
     right: 20px;
-    display: none;
-    background-color: #444;
-    border: none;
-    border-radius: 50%; /* Bordas arredondadas */
-    padding: 10px;
-    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    background-color: #3a0a4b;
     color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    text-align: center;
+}
+
+button#back-to-top:hover {
+    background-color: #2a0a35;
 }
 
 footer {
+    background-color: #3a0a4b; /* Roxo escuro */
+    color: white;
+    padding: 1rem;
     text-align: center;
-    padding: 10px;
-    background-color: #444;
+    margin-top: 2rem;
 }
+
+/* Estilos para o tema claro */
+body.light-theme {
+    background-color: #ffffff; /* Fundo claro */
+    color: #333333; /* Texto escuro */
+}
+
+header.light-theme, 
+.menu.light-theme {
+    background-color: #f2c94c; /* Amarelo claro */
+    color: #333333; /* Texto escuro */
+}
+
+.tema-box.light-theme {
+    background-color: #f7f7f7; /* Fundo claro dos quadrados */
+    border: 1px solid #cccccc; /* Borda clara */
+    color: #333333; /* Texto escuro */
+}
+
+.menu-button.active {
+    transform: rotate(45deg); /* Rotação para "X" */
+}
+
+/* Animações para menu hambúrguer */
+.menu-button.active::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: #f2c94c; /* Cor do risco */
+    transform: rotate(90deg); /* Rotação para criar o "X" */
+}
+
+.menu-button.active::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: #f2c94c; /* Cor do risco */
+    }
