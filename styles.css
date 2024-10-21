@@ -18,10 +18,13 @@ header {
 }
 
 .menu-button {
-    cursor: pointer;
-    display: inline-block;
-    margin-top: 10px;
+    position: absolute; /* Permite mover o botão livremente */
+    left: 20px; /* Distância do lado esquerdo */
+    top: 20px; /* Distância do topo */
+    cursor: pointer; /* Mostra o cursor de clique */
+    z-index: 100; /* Garante que o botão fique sobre outros elementos */
 }
+
 
 .menu-button div {
     width: 30px;
@@ -44,10 +47,11 @@ header {
 }
 
 .theme-toggle {
-    cursor: pointer;
-    display: inline-block;
-    font-size: 24px;
-    margin-left: 20px;
+    position: absolute; /* Permite mover o botão livremente */
+    right: 20px; /* Distância do lado direito */
+    top: 20px; /* Distância do topo */
+    cursor: pointer; /* Mostra o cursor de clique */
+    z-index: 100; /* Garante que o botão fique sobre outros elementos */
 }
 
 nav {
