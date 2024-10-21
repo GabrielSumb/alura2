@@ -151,13 +151,25 @@ button#back-to-top {
     color: white;
     border: none;
     padding: 10px;
-    border-radius: 50%; /* Botão redondo */
+    border-radius: 8px; /* Borda arredondada */
     cursor: pointer;
-    transition: background-color 0.3s;
+    width: 40px; /* Largura do botão */
+    height: 40px; /* Altura do botão */
+    display: flex;
+    justify-content: center; /* Centraliza o conteúdo */
+    align-items: center; /* Centraliza o conteúdo */
+    transition: background-color 0.3s; /* Transição suave para hover */
 }
 
 button#back-to-top:hover {
     background-color: #2a0a35; /* Cor ao passar o mouse */
+    border-radius: 8px; /* Mantém as bordas arredondadas */
+}
+
+/* Ícone da seta para cima */
+button#back-to-top::before {
+    content: '↑'; /* Seta para cima */
+    font-size: 24px; /* Tamanho da seta */
 }
 
 footer {
