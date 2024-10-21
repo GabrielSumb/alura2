@@ -80,24 +80,22 @@ header {
     background-color: #3a0a4b; /* Cor ao passar o mouse */
 }
 
-/* Estilos do carrossel */
 .carousel {
     position: relative;
     width: 80%;
     margin: 2rem auto;
-    overflow: hidden; /* Esconde as imagens que não estão visíveis */
 }
 
 .slides {
     display: flex;
-    transition: transform 0.5s ease-in-out;
-    width: 100%; /* Mantém todas as imagens em linha reta */
+    overflow: hidden;
+    width: 100%;
 }
 
 .slide {
-    min-width: 100%; /* Cada slide ocupa 100% do contêiner do carrossel */
-    height: auto; /* Ajusta a altura das imagens */
-    object-fit: contain; /* Redimensiona as imagens de forma a não distorcê-las */
+    width: 100%;
+    height: auto; /* Ajusta altura */
+    transition: transform 0.5s ease;
 }
 
 button {
@@ -119,17 +117,23 @@ button {
     right: 0;
 }
 
+/* Botão de voltar ao topo (ajustado para um pequeno quadrado com bordas arredondadas) */
 button#back-to-top {
     display: none;
     position: fixed;
     bottom: 20px;
     right: 20px;
+    width: 40px;
+    height: 40px;
     background-color: #3a0a4b;
     color: white;
     border: none;
-    padding: 10px;
-    border-radius: 5px;
+    border-radius: 50%;
     cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    text-align: center;
 }
 
 button#back-to-top:hover {
