@@ -1,145 +1,73 @@
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #121212; /* Fundo escuro */
-    color: #ffffff; /* Texto claro */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+document.addEventListener('DOMContentLoaded', function() {
+    const themeToggle = document.querySelector('.theme-toggle');
+    const body = document.body;
+    const menuButton = document.querySelector('.menu-button');
+    const menu = document.querySelector('.menu');
+    const temaBoxes = document.querySelectorAll('.tema-box');
+    const backToTopButton = document.getElementById('back-to-top');
+    let currentTheme = 'dark';
 
-header {
-    background-color: #1E1E1E; /* Header mais escuro */
-    width: 100%;
-    padding: 20px;
-    text-align: center;
-    position: relative;
-}
+    // Alternar tema
+    themeToggle.addEventListener('click', function() {
+        if (currentTheme === 'dark') {
+            body.classList.add('light-theme');
+            temaBoxes.forEach(box => box.classList.add('light-theme'));
+            currentTheme = 'light';
+            themeToggle.textContent = '🌙'; // Símbolo da lua para o tema claro
+        } else {
+            body.classList.remove('light-theme');
+            temaBoxes.forEach(box => box.classList.remove('light-theme'));
+            currentTheme = 'dark';
+            themeToggle.textContent = '☀️'; // Símbolo do sol para o tema escuro
+        }
+    });
 
-.menu-button {
-    cursor: pointer;
-    display: inline-block;
-    margin: 10px;
-}
+    // Menu hambúrguer
+    menuButton.addEventListener('click', function() {
+        menu.classList.toggle('open');
+        menuButton.classList.toggle('active');
+        // Altera a animação do menu hambúrguer para X
+        menuButton.classList.toggle('cross');
+    });
 
-.menu-button div {
-    width: 30px;
-    height: 4px;
-    background-color: #ffffff;
-    margin: 5px;
-    transition: all 0.3s ease;
-}
+    // Botão Voltar ao Topo
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 300) {
+            backToTopButton.style.display = 'flex'; // Alterado para flex para centralizar o conteúdo
+        } else {
+            backToTopButton.style.display = 'none';
+        }
+    });
 
-.menu-button.active div:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-}
+    backToTopButton.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
 
-.menu-button.active div:nth-child(2) {
-    opacity: 0; /* Esconde o meio */
-}
+    // Carrossel de imagens
+    const slides = document.querySelectorAll('.slide');
+    const prevButton = document.querySelector('.prev');
+    const nextButton = document.querySelector('.next');
+    let currentSlide = 0;
 
-.menu-button.active div:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
-}
+    // Função para mudar os slides
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.style.display = (i === index) ? 'block' : 'none'; // Alteração para apenas mostrar o slide atual
+        });
+    }
 
-.theme-toggle {
-    cursor: pointer;
-    font-size: 24px;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-}
+    // Exibir o slide inicial
+    showSlide(currentSlide);
 
-.menu {
-    display: none; /* Esconde o menu inicialmente */
-}
+    // Botão "Próximo" - Move para o próximo slide
+    nextButton.addEventListener('click', function() {
+        currentSlide = (currentSlide + 1) % slides.length; // Vai para o próximo slide, reinicia ao final
+        showSlide(currentSlide);
+    });
 
-.menu.open {
-    display: block; /* Mostra o menu quando aberto */
-}
-
-.menu ul {
-    list-style: none;
-    padding: 0;
-}
-
-.menu ul li {
-    margin: 10px 0;
-}
-
-.menu ul li a {
-    color: #ffffff;
-    text-decoration: none;
-}
-
-.carousel {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.slides {
-    position: relative;
-    overflow: hidden;
-    width: 80%; /* Ajusta a largura do carrossel */
-}
-
-.slide {
-    width: 100%; /* A imagem ocupa 100% da largura do contêiner */
-    display: none; /* Esconde todas as imagens inicialmente */
-}
-
-.slide.active {
-    display: block; /* Mostra a imagem ativa */
-}
-
-button.prev, button.next {
-    background-color: rgba(255, 255, 255, 0.5);
-    border: none;
-    cursor: pointer;
-    padding: 10px;
-    margin: 10px;
-}
-
-.tema-box {
-    background-color: #1E1E1E;
-    border-radius: 8px;
-    padding: 20px;
-    margin: 20px 0;
-    width: 80%; /* Aumenta a largura da caixa de texto */
-    max-width: 800px; /* Limita a largura máxima */
-    text-align: justify; /* Justifica o texto */
-}
-
-#back-to-top {
-    display: none; /* Inicialmente oculto */
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #1E1E1E;
-    color: white;
-    border: none;
-    border-radius: 50%; /* Bordas arredondadas */
-    width: 50px; /* Tamanho do botão de voltar ao topo */
-    height: 50px; /* Tamanho do botão de voltar ao topo */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 18px; /* Tamanho do ícone */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Sombra para efeito de profundidade */
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-#back-to-top:hover {
-    background-color: rgba(255, 255, 255, 0.7); /* Mudança de cor ao passar o mouse */
-}
-
-/* Estilo para o footer */
-footer {
-    margin-top: auto; /* Empurra o footer para o final da página */
-    padding: 10px;
-    text-align: center;
-    background-color: #1E1E1E; /* Fundo do footer */
-    width: 100%;
-}
+    // Botão "Anterior" - Move para o slide anterior
+    prevButton.addEventListener('click', function() {
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length; // Vai para o slide anterior
+        showSlide(currentSlide);
+    });
+});
