@@ -84,7 +84,7 @@ nav ul li a {
 
 .carousel {
     position: relative;
-    width: 80%;
+    width: 60%;
     margin: 20px auto;
     overflow: hidden;
 }
@@ -95,7 +95,7 @@ nav ul li a {
 
 .slide {
     display: none; /* Inicialmente ocultar todos os slides */
-    width: 100%; /* Ajustar a largura para 100% do carrossel */
+    width: 60%; /* Ajustar a largura para 100% do carrossel */
     max-width: 80%; /* Limitar a largura máxima */
     margin: 0 auto; /* Centralizar as imagens */
 }
